@@ -6,6 +6,8 @@ async function loadDetail() {
   const item = data.find(r => r.id === id);
   const root = document.querySelector('[data-detail]');
 
+  const backUrl = new URL('directory.html', window.location.href);
+
   if (!item) {
     root.innerHTML = '<div class="detail-card">Không tìm thấy tài nguyên.</div>';
     return;
@@ -22,8 +24,8 @@ async function loadDetail() {
       <p>${item.summary}</p>
       ${feidNotice}
       <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
-        ${item.source_url ? `<a class="btn" href="${item.source_url}" target="_blank" rel="noreferrer">${item.cta_label || 'Xem thêm'}</a>` : ''}
-        <a class="btn" style="background:transparent;color:var(--ink);" href="directory.html">Quay lại danh mục</a>
+        ${item.source_url ? `<a class="btn" href="${item.source_url}" target="_blank" rel="noreferrer">${item.cta_label || 'Mở link'}</a>` : ''}
+        <a class="btn" style="background:transparent;color:var(--ink);" href="${backUrl.toString()}">Quay lại danh mục</a>
       </div>
     </div>
     <div class="detail-card">

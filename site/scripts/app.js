@@ -23,6 +23,8 @@ function renderCards(list, container) {
   list.forEach(item => {
     const card = document.createElement('article');
     card.className = 'card';
+    const detailUrl = new URL('detail.html', window.location.href);
+    detailUrl.searchParams.set('id', item.id);
     const statusBadge = item.status === 'Update'
       ? '<span class="badge warn">Cần cập nhật</span>'
       : '<span class="badge">Đã audit</span>';
@@ -40,7 +42,10 @@ function renderCards(list, container) {
         <p>${item.summary}</p>
         <div class="meta">${statusBadge} ${feidBadge}</div>
       </div>
-      <a class="btn" href="detail.html?id=${encodeURIComponent(item.id)}">${item.cta_label || 'Xem thêm'}</a>
+      <div class="card-actions">
+        <a class="btn" href="${detailUrl.toString()}">Xem chi tiết</a>
+        ${item.source_url ? `<a class="btn ghost" href="${item.source_url}" target="_blank" rel="noreferrer">${item.cta_label || 'Mở link'}</a>` : ''}
+      </div>
     `;
     container.appendChild(card);
   });
