@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FPT HUB — Danh mục</title>
+  <link rel="icon" href="assets/logo/mono 1.png" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body data-page="directory" onload="appInit()">
+  <header class="container navbar">
+    <div class="brand">
+      <img src="assets/logo/color 1.png" alt="FPT HUB" />
+      <div>
+        <div style="font-weight:700;">FPT HUB</div>
+        <div style="font-size:0.85rem;color:var(--muted);">Directory</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Trang chủ</a>
+      <a href="#filters">Bộ lọc</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>Danh mục tài nguyên</h2>
+      <div class="filter-row" id="filters">
+        <input data-search type="search" placeholder="Tìm theo từ khóa..." style="flex:1;min-width:220px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;" />
+        <select data-category></select>
+        <select data-status>
+          <option value="">Tất cả trạng thái</option>
+          <option value="Reuse">Reuse</option>
+          <option value="Update">Update</option>
+          <option value="Replace">Replace</option>
+          <option value="Remove">Remove</option>
+        </select>
+      </div>
+      <div class="grid" data-list></div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <div>Gợi ý: click vào card để xem chi tiết và link nguồn.</div>
+  </footer>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>

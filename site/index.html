@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FPT HUB — Directory</title>
+  <link rel="icon" href="assets/logo/mono 1.png" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body data-page="index" onload="appInit()">
+  <header class="container navbar">
+    <div class="brand">
+      <img src="assets/logo/color 1.png" alt="FPT HUB" />
+      <div>
+        <div style="font-weight:700;">FPT HUB</div>
+        <div style="font-size:0.85rem;color:var(--muted);">Resource Directory</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="directory.html">Danh mục</a>
+      <a href="#categories">Chủ đề</a>
+      <a href="#featured">Nổi bật</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Hub tổng hợp thông tin FPT Hà Nội</h1>
+        <p>Tìm nhanh tài nguyên theo chủ đề: học vụ, CLB, ngành học, sự kiện và đời sống sinh viên. Dữ liệu đang được audit và cập nhật theo nguồn chính thức.</p>
+        <div class="search-bar">
+          <input data-search type="search" placeholder="Tìm theo từ khóa, ví dụ: FAP, CLB, ngành..." />
+          <a class="btn" href="directory.html">Mở danh mục</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3 style="margin-top:0;">Bắt đầu nhanh</h3>
+        <div class="meta">FAP / EduNext / FLM đều yêu cầu FeID.</div>
+        <div style="margin-top:14px;display:grid;gap:10px;">
+          <a class="btn" href="detail.html?id=fap-thongbao">FAP Thông báo</a>
+          <a class="btn" href="detail.html?id=edunext-home" style="background:var(--accent-2);border-color:var(--accent-2);">EduNext</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <h2>Chủ đề</h2>
+      <div class="chips" data-chips></div>
+    </section>
+
+    <section class="section" id="featured">
+      <h2>Nổi bật</h2>
+      <div class="grid" data-featured></div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <div>FPT HUB — bản alpha. Mọi tài nguyên có trạng thái “Cần cập nhật” sẽ được đối chiếu nguồn chính thức.</div>
+  </footer>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>
