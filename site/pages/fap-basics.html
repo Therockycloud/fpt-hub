@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAP — Đăng nhập & Thanh toán | FPT Hub</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/logo-artboard.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar__inner">
+            <a href="../index.html" class="navbar__logo"><img src="../assets/logo/logo-artboard.svg"
+                    alt="FPT Hub"><span>FPT <span class="text-gradient">Hub</span></span></a>
+            <div class="navbar__links" id="navLinks">
+                <a href="../index.html" class="navbar__link">Trang chủ</a>
+                <a href="../index.html#resources" class="navbar__link navbar__link--active">Tài liệu</a>
+                <a href="about.html" class="navbar__link">Giới thiệu</a>
+            </div>
+            <div class="navbar__actions">
+                <div id="authBtnWrap"><button class="btn btn--primary" onclick="handleLogin()" id="loginBtn">Đăng
+                        nhập</button></div>
+                <div id="userWrap" class="navbar__user" style="display:none;"><img id="userAvatar"
+                        class="navbar__avatar" src="" alt=""><span id="userName" class="navbar__username"></span><button
+                        class="btn btn--ghost" onclick="handleLogout()" style="padding:0.25rem;"><svg width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg></button></div>
+                <button class="navbar__toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="guide">
+        <div class="container">
+            <div class="guide__hero">
+                <div class="guide__breadcrumb">
+                    <a href="../index.html">Trang chủ</a><span>/</span><a href="../index.html#resources">Tài
+                        liệu</a><span>/</span><span style="color:var(--text-primary)">FAP — Đăng nhập & Thanh
+                        toán</span>
+                </div>
+                <h1 class="guide__title">🔑 FAP — Đăng nhập & Thanh toán</h1>
+                <p class="guide__subtitle">Hướng dẫn cơ bản về cách đăng nhập FAP, thanh toán học phí, xem thời khóa
+                    biểu, quy định điểm danh và bảo lưu.</p>
+                <a href="https://fap.fpt.edu.vn/Thongbao.aspx" target="_blank" rel="noopener" class="guide__link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    Truy cập FAP
+                </a>
+            </div>
+
+            <!-- 1. Login -->
+            <div class="guide__section" id="login">
+                <h2 class="guide__section-title">1. Đăng nhập hệ thống</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Chọn Campus & Đăng nhập</h4>
+                        <p class="guide__step-text">
+                            1. Tại giao diện chính, chọn <strong>Campus</strong> (cơ sở đang học).<br><br>
+                            2. Đăng nhập bằng một trong hai cách:<br>
+                            • <strong>Login With Google</strong> — Dành cho sinh viên nói chung<br>
+                            • <strong>Login With FeID</strong> — Dành riêng cho sinh viên từ khóa K19 trở đi
+                        </p>
+                        <div class="tip-box tip-box--info">
+                            <div class="tip-box__title">ℹ️ Lưu ý về FeID</div>
+                            <div class="tip-box__content">Sinh viên từ K19 có thể dùng cả Google và FeID. Nếu gặp lỗi
+                                đăng nhập Google, thử đăng nhập bằng FeID.</div>
+                        </div>
+                    </div>
+                    <div class="guide__step-img">
+                        <img src="../assets/guides/fap/z7487160542488_fb47c44dd751d893d6bc7123ad08e2ce.jpg"
+                            alt="Đăng nhập FAP" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Payment -->
+            <div class="guide__section" id="payment">
+                <h2 class="guide__section-title">2. Thanh toán các khoản phí</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Nộp học phí & Phí phát sinh</h4>
+                        <p class="guide__step-text">
+                            1. Truy cập mục <strong>Registration/Application</strong> (Thủ tục/đơn từ)<br><br>
+                            2. Chọn <strong>Choose paid items</strong> — Thanh toán<br><br>
+                            3. Tích chọn khoản cần nộp (Học phí kỳ tới, phí ký túc xá...) và nhấn <strong>Thanh
+                                toán</strong>
+                        </p>
+                    </div>
+                    <div class="guide__step-img">
+                        <img src="../assets/guides/fap/z7487166004303_f5ac8c9bd89b1cd873e03a4c2e8f00c0.jpg"
+                            alt="Thanh toán" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Timetable -->
+            <div class="guide__section" id="timetable">
+                <h2 class="guide__section-title">3. Tra cứu thời khóa biểu</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Xem lịch học hàng tuần</h4>
+                        <p class="guide__step-text">
+                            Tại cột <strong>Information Access</strong>, chọn <strong>Weekly timetable</strong>.<br><br>
+                            Hệ thống hiển thị chi tiết: <strong>phòng học, ca học, giảng viên</strong> theo từng ngày.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Attendance -->
+            <div class="guide__section" id="attendance">
+                <h2 class="guide__section-title">4. Quy định về điểm danh</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Quy định vắng mặt</h4>
+                        <p class="guide__step-text">Sinh viên cần lưu ý nghiêm ngặt:</p>
+                        <div class="tip-box tip-box--warning">
+                            <div class="tip-box__title">⚠️ QUAN TRỌNG - Giới hạn vắng mặt</div>
+                            <div class="tip-box__content">
+                                • <strong>Không được nghỉ quá 20%</strong> tổng số buổi mỗi môn<br>
+                                • Buổi nghỉ thứ 5 thường dẫn đến <strong>trượt môn (Failed)</strong><br>
+                                • Mỗi môn chiếm khoảng 5% trên tổng chương trình
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Suspend -->
+            <div class="guide__section" id="suspend">
+                <h2 class="guide__section-title">5. Thủ tục bảo lưu (Suspend)</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Xin tạm nghỉ học</h4>
+                        <p class="guide__step-text">
+                            1. Vào <strong>Registration/Application</strong><br><br>
+                            2. Chọn <strong>Suspend one semester | Cancel</strong>
+                        </p>
+                        <div class="tip-box">
+                            <div class="tip-box__title">💡 Lưu ý</div>
+                            <div class="tip-box__content">Đơn bảo lưu chỉ xuất hiện khi hệ thống mở cổng đăng ký (có
+                                thời hạn cụ thể). Nếu quá hạn hoặc chưa đến hạn, bạn sẽ không thấy đơn này.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__logo"><img src="../assets/logo/logo-artboard.svg" alt="FPT Hub"><span>FPT Hub</span>
+                </div>
+                <span class="footer__text">© 2026 FPT Hub</span>
+                <div class="footer__links"><a href="../index.html" class="footer__link">Trang chủ</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()"><button class="lightbox__close">✕</button><img
+            id="lightboxImg" src="" alt=""></div>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

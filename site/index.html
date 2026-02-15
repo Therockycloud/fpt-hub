@@ -1,64 +1,275 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FPT HUB — Directory</title>
-  <link rel="icon" href="assets/logo/mono 1.png" />
-  <link rel="stylesheet" href="styles/main.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FPT Hub — Tổng hợp thông tin dành cho sinh viên FPT</title>
+  <meta name="description" content="FPT Hub - Nền tảng tổng hợp hướng dẫn sử dụng FAP, FLM, EduNext và các hệ thống trường dành riêng cho sinh viên FPT University.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/logo-artboard.svg">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-page="index" onload="appInit()">
-  <header class="container navbar">
-    <div class="brand">
-      <img src="assets/logo/color 1.png" alt="FPT HUB" />
-      <div>
-        <div style="font-weight:700;">FPT HUB</div>
-        <div style="font-size:0.85rem;color:var(--muted);">Resource Directory</div>
+<body>
+  <!-- Loading Screen -->
+  <div id="loadingScreen" class="loading-screen" style="display:none;">
+    <div class="loading-spinner"></div>
+    <span style="color:var(--text-muted);font-size:0.875rem;">Đang xác thực...</span>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="assets/logo/logo-artboard.svg" alt="FPT Hub">
+        <span>FPT <span class="text-gradient">Hub</span></span>
+      </a>
+      <div class="navbar__links" id="navLinks">
+        <a href="index.html" class="navbar__link navbar__link--active">Trang chủ</a>
+        <a href="#resources" class="navbar__link" id="navResources">Tài liệu</a>
+        <a href="pages/about.html" class="navbar__link">Giới thiệu</a>
+      </div>
+      <div class="navbar__actions">
+        <!-- Before login -->
+        <div id="authBtnWrap">
+          <button class="btn btn--primary" onclick="handleLogin()" id="loginBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            Đăng nhập
+          </button>
+        </div>
+        <!-- After login (hidden by default) -->
+        <div id="userWrap" class="navbar__user" style="display:none;">
+          <img id="userAvatar" class="navbar__avatar" src="" alt="">
+          <span id="userName" class="navbar__username"></span>
+          <button class="btn btn--ghost" onclick="handleLogout()" title="Đăng xuất" style="padding:0.25rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </button>
+        </div>
+        <button class="navbar__toggle" id="navToggle" onclick="toggleNav()">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-    <nav class="nav-links">
-      <a href="directory.html">Danh mục</a>
-      <a href="#categories">Chủ đề</a>
-      <a href="#featured">Nổi bật</a>
-    </nav>
-  </header>
+  </nav>
 
-  <main class="container">
-    <section class="hero">
-      <div>
-        <h1>Hub tổng hợp thông tin FPT Hà Nội</h1>
-        <p>Tìm nhanh tài nguyên theo chủ đề: học vụ, CLB, ngành học, sự kiện và đời sống sinh viên. Dữ liệu đang được audit và cập nhật theo nguồn chính thức.</p>
-        <div class="search-bar">
-          <input data-search type="search" placeholder="Tìm theo từ khóa, ví dụ: FAP, CLB, ngành..." />
-          <a class="btn" href="directory.html">Mở danh mục</a>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="badge badge--brand">🚀 Dành riêng cho sinh viên FPT</span>
+      </div>
+      <img src="assets/logo/logo-artboard.svg" alt="FPT Hub Logo" class="hero__logo">
+      <h1 class="hero__title">
+        Tất cả thông tin trường<br>
+        <span class="text-gradient">một nơi duy nhất.</span>
+      </h1>
+      <p class="hero__subtitle">
+        FPT Hub tổng hợp hướng dẫn sử dụng FAP, FLM, EduNext cùng mọi thông tin cần thiết cho sinh viên FPT University Hà Nội.
+      </p>
+      <div class="hero__actions">
+        <button class="btn btn--primary btn--large" onclick="handleLogin()" id="heroLoginBtn">
+          <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.9 33 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 5.9 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.3 15.7 18.8 13 24 13c3 0 5.8 1.1 7.9 3l5.7-5.7C34 5.9 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-1.8 13.4-5.1l-6.2-5.2C29.2 35.2 26.7 36 24 36c-5.2 0-9.6-3-11.7-7.4l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4-4.1 5.2l6.2 5.2C36.8 38.9 44 34 44 24c0-1.3-.1-2.7-.4-3.9z"/></svg>
+          Đăng nhập bằng Google FPT
+        </button>
+        <a href="#resources" class="btn btn--secondary btn--large" id="heroExploreBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Xem thử tài liệu
+        </a>
+      </div>
+      <div class="hero__stats">
+        <div>
+          <span class="hero__stat-num">5+</span>
+          <span class="hero__stat-label">Hệ thống hướng dẫn</span>
+        </div>
+        <div>
+          <span class="hero__stat-num">80+</span>
+          <span class="hero__stat-label">Ảnh chụp màn hình</span>
+        </div>
+        <div>
+          <span class="hero__stat-num">100%</span>
+          <span class="hero__stat-label">Miễn phí</span>
         </div>
       </div>
-      <div class="hero-card">
-        <h3 style="margin-top:0;">Bắt đầu nhanh</h3>
-        <div class="meta">FAP / EduNext / FLM đều yêu cầu FeID.</div>
-        <div style="margin-top:14px;display:grid;gap:10px;">
-          <a class="btn" href="detail.html?id=fap-thongbao">FAP Thông báo</a>
-          <a class="btn" href="detail.html?id=edunext-home" style="background:var(--accent-2);border-color:var(--accent-2);">EduNext</a>
-          <div class="notice" style="margin-top:6px;">Link sẽ mở tab mới. Bạn cần đăng nhập FeID tại trang đích.</div>
+    </div>
+  </section>
+
+  <!-- Resource Directory Section -->
+  <section class="section" id="resources">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">📚 Thư viện Tài liệu</h2>
+        <p class="section__desc">Hướng dẫn chi tiết từng hệ thống trường với ảnh chụp và mẹo từ sinh viên.</p>
+      </div>
+
+      <!-- Search -->
+      <div class="search-bar">
+        <div class="search-bar__wrapper">
+          <svg class="search-bar__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="search-bar__input" placeholder="Tìm kiếm tài liệu..." id="searchInput" oninput="filterCards()">
         </div>
       </div>
-    </section>
 
-    <section class="section" id="categories">
-      <h2>Chủ đề</h2>
-      <div class="chips" data-chips></div>
-    </section>
+      <!-- Filter Tabs -->
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab filter-tab--active" data-filter="all" onclick="setFilter('all', this)">Tất cả</button>
+        <button class="filter-tab" data-filter="academic" onclick="setFilter('academic', this)">Học vụ</button>
+        <button class="filter-tab" data-filter="learning" onclick="setFilter('learning', this)">Học tập</button>
+        <button class="filter-tab" data-filter="exam" onclick="setFilter('exam', this)">Thi cử</button>
+        <button class="filter-tab" data-filter="info" onclick="setFilter('info', this)">Thông tin</button>
+      </div>
 
-    <section class="section" id="featured">
-      <h2>Nổi bật</h2>
-      <div class="grid" data-featured></div>
-    </section>
-  </main>
+      <!-- Cards Grid -->
+      <div class="card-grid" id="cardGrid">
+        <!-- FAP - Grades & Registration -->
+        <a href="pages/fap-grades.html" class="card" data-category="academic" data-title="FAP Bảng điểm & Đăng ký">
+          <div class="card__icon card__icon--fap">📊</div>
+          <h3 class="card__title">FAP — Bảng điểm & Đăng ký</h3>
+          <p class="card__desc">Hướng dẫn xem bảng điểm, khung chương trình, đăng ký môn học, chuyển lớp và các thủ tục hành chính.</p>
+          <div class="card__meta">
+            <div class="card__tags">
+              <span class="badge badge--brand">Học vụ</span>
+              <span class="badge badge--success">19 ảnh</span>
+            </div>
+            <div class="card__arrow">→</div>
+          </div>
+        </a>
 
-  <footer class="container footer">
-    <div>FPT HUB — bản alpha. Mọi tài nguyên có trạng thái “Cần cập nhật” sẽ được đối chiếu nguồn chính thức.</div>
+        <!-- FAP - Login & Payment -->
+        <a href="pages/fap-basics.html" class="card" data-category="academic" data-title="FAP Đăng nhập & Thanh toán">
+          <div class="card__icon card__icon--fap">🔑</div>
+          <h3 class="card__title">FAP — Đăng nhập & Thanh toán</h3>
+          <p class="card__desc">Cách đăng nhập hệ thống, thanh toán học phí, xem thời khóa biểu, điểm danh và thủ tục bảo lưu.</p>
+          <div class="card__meta">
+            <div class="card__tags">
+              <span class="badge badge--brand">Học vụ</span>
+              <span class="badge badge--info">Cơ bản</span>
+            </div>
+            <div class="card__arrow">→</div>
+          </div>
+        </a>
+
+        <!-- FAP - Exams -->
+        <a href="pages/fap-exams.html" class="card" data-category="exam" data-title="FAP SEB EOS Thi cử">
+          <div class="card__icon card__icon--seb">📝</div>
+          <h3 class="card__title">FAP — Thi cử (SEB/EOS)</h3>
+          <p class="card__desc">Hướng dẫn cài đặt SEB, EOS Client, quy chế thi, xử lý lỗi phần mềm thi và phúc khảo bài thi.</p>
+          <div class="card__meta">
+            <div class="card__tags">
+              <span class="badge badge--brand">Thi cử</span>
+              <span class="badge badge--success">23 ảnh</span>
+            </div>
+            <div class="card__arrow">→</div>
+          </div>
+        </a>
+
+        <!-- EduNext -->
+        <a href="pages/edunext.html" class="card" data-category="learning" data-title="EduNext Thảo luận Nhóm">
+          <div class="card__icon card__icon--edunext">💬</div>
+          <h3 class="card__title">EduNext — Thảo luận & Nhóm</h3>
+          <p class="card__desc">Đăng nhập, tham gia slot học, thảo luận nhóm, nộp bài, chấm điểm chéo và đánh giá trên EduNext.</p>
+          <div class="card__meta">
+            <div class="card__tags">
+              <span class="badge badge--info">Học tập</span>
+              <span class="badge badge--success">22 ảnh</span>
+            </div>
+            <div class="card__arrow">→</div>
+          </div>
+        </a>
+
+        <!-- FLM -->
+        <a href="pages/flm.html" class="card" data-category="learning" data-title="FLM Quản lý Chương trình học">
+          <div class="card__icon card__icon--flm">🗺️</div>
+          <h3 class="card__title">FLM — Chương trình đào tạo</h3>
+          <p class="card__desc">Xem đề cương môn học, trọng số điểm, điều kiện tiên quyết, danh sách giáo trình trên FLM.</p>
+          <div class="card__meta">
+            <div class="card__tags">
+              <span class="badge badge--info">Học tập</span>
+              <span class="badge badge--success">7 ảnh</span>
+            </div>
+            <div class="card__arrow">→</div>
+          </div>
+        </a>
+
+        <!-- Learning Ecosystem Overview -->
+        <a href="pages/ecosystem.html" class="card" data-category="info" data-title="Hệ sinh thái Học tập FPT CMS Coursera">
+          <div class="card__icon card__icon--coursera">🌐</div>
+          <h3 class="card__title">Hệ sinh thái Học tập FPT</h3>
+          <p class="card__desc">Tổng quan CMS, Coursera, EduNext, Thư viện số, FLM — lộ trình thông thạo & mẹo từ sinh viên.</p>
+          <div class="card__meta">
+            <div class="card__tags">
+              <span class="badge badge--info">Tổng hợp</span>
+              <span class="badge badge--brand">Quan trọng</span>
+            </div>
+            <div class="card__arrow">→</div>
+          </div>
+        </a>
+
+        <!-- Quick Links -->
+        <div class="card" data-category="info" data-title="Liên kết Nhanh Quick Links" onclick="document.getElementById('quickLinksModal').style.display='flex'">
+          <div class="card__icon card__icon--about">🔗</div>
+          <h3 class="card__title">Liên kết Nhanh</h3>
+          <p class="card__desc">Truy cập nhanh tới FAP, FLM, EduNext và các trang web chính thức của trường.</p>
+          <div class="card__meta">
+            <div class="card__tags">
+              <span class="badge badge--info">Tiện ích</span>
+            </div>
+            <div class="card__arrow">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links Modal -->
+  <div id="quickLinksModal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:1.5rem;" onclick="if(event.target===this)this.style.display='none'">
+    <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:2rem;max-width:480px;width:100%;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
+        <h2 style="font-size:1.25rem;font-weight:700;">🔗 Liên kết Nhanh</h2>
+        <button onclick="document.getElementById('quickLinksModal').style.display='none'" style="background:none;border:none;color:var(--text-muted);font-size:1.5rem;cursor:pointer;">✕</button>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.75rem;">
+        <a href="https://fap.fpt.edu.vn/Thongbao.aspx" target="_blank" rel="noopener" class="guide__link" style="display:flex;justify-content:space-between;">
+          <span>📊 FAP — Academic Portal</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="https://flm.fpt.edu.vn/Login" target="_blank" rel="noopener" class="guide__link" style="display:flex;justify-content:space-between;">
+          <span>🗺️ FLM — Learning Management</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="https://fu-edunext.fpt.edu.vn/home" target="_blank" rel="noopener" class="guide__link" style="display:flex;justify-content:space-between;">
+          <span>💬 EduNext — E-Learning</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__logo">
+          <img src="assets/logo/logo-artboard.svg" alt="FPT Hub">
+          <span>FPT Hub</span>
+        </div>
+        <span class="footer__text">© 2026 FPT Hub — Dự án dành cho sinh viên FPT University</span>
+        <div class="footer__links">
+          <a href="https://www.facebook.com/share/1C9CGed15R/" target="_blank" rel="noopener" class="footer__link">Facebook</a>
+          <a href="pages/about.html" class="footer__link">Giới thiệu</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <script src="scripts/app.js"></script>
+  <!-- Image Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lightbox__close" onclick="closeLightbox()">✕</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

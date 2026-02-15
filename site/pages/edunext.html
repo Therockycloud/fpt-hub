@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduNext — Thảo luận & Nhóm | FPT Hub</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/logo-artboard.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar__inner">
+            <a href="../index.html" class="navbar__logo"><img src="../assets/logo/logo-artboard.svg"
+                    alt="FPT Hub"><span>FPT <span class="text-gradient">Hub</span></span></a>
+            <div class="navbar__links" id="navLinks">
+                <a href="../index.html" class="navbar__link">Trang chủ</a>
+                <a href="../index.html#resources" class="navbar__link navbar__link--active">Tài liệu</a>
+                <a href="about.html" class="navbar__link">Giới thiệu</a>
+            </div>
+            <div class="navbar__actions">
+                <div id="authBtnWrap"><button class="btn btn--primary" onclick="handleLogin()" id="loginBtn">Đăng
+                        nhập</button></div>
+                <div id="userWrap" class="navbar__user" style="display:none;"><img id="userAvatar"
+                        class="navbar__avatar" src="" alt=""><span id="userName" class="navbar__username"></span><button
+                        class="btn btn--ghost" onclick="handleLogout()" style="padding:0.25rem;"><svg width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg></button></div>
+                <button class="navbar__toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="guide">
+        <div class="container">
+            <div class="guide__hero">
+                <div class="guide__breadcrumb">
+                    <a href="../index.html">Trang chủ</a><span>/</span><a href="../index.html#resources">Tài
+                        liệu</a><span>/</span><span style="color:var(--text-primary)">EduNext</span>
+                </div>
+                <h1 class="guide__title">💬 EduNext — Thảo luận & Nhóm</h1>
+                <p class="guide__subtitle">Nền tảng thảo luận, đánh giá chéo và chấm điểm nhóm theo mô hình "Xây dựng
+                    kiến thức xã hội".</p>
+                <a href="https://fu-edunext.fpt.edu.vn/home" target="_blank" rel="noopener" class="guide__link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    Truy cập EduNext
+                </a>
+            </div>
+
+            <div class="guide__toc">
+                <h3>📑 Mục lục</h3>
+                <ol>
+                    <li><a href="#s1">Đăng nhập EduNext</a></li>
+                    <li><a href="#s2">Trang chủ & Chức năng</a></li>
+                    <li><a href="#s3">Slot học & Tài liệu</a></li>
+                    <li><a href="#s4">Thảo luận & Nộp bài</a></li>
+                    <li><a href="#s5">Chấm điểm & Đánh giá</a></li>
+                </ol>
+            </div>
+
+            <!-- Section 1 -->
+            <div class="guide__section" id="s1">
+                <h2 class="guide__section-title">1. Đăng nhập EduNext</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Giao diện đăng nhập</h4>
+                        <p class="guide__step-text">Sử dụng 2 cách đăng nhập tùy theo khóa. Có phần xác minh captcha và
+                            FAQ cho người mới.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/edunext/1.png" alt="Đăng nhập EduNext"
+                            loading="lazy"></div>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="guide__section" id="s2">
+                <h2 class="guide__section-title">2. Trang chủ & Chức năng</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Tổng quan giao diện</h4>
+                        <p class="guide__step-text">
+                            <strong>7 ô bên trái:</strong> Tài khoản, trang chủ, assignments, slot học, hướng dẫn, phản
+                            hồi<br><br>
+                            <strong>4 ô phía trên:</strong> Khóa học, dự án, dự án tham khảo, xác nhận đề tài<br><br>
+                            Web cung cấp các khóa học để chọn môn, hướng dẫn SEB và các bản cập nhật.
+                        </p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/edunext/3.png" alt="Trang chủ EduNext"
+                            loading="lazy"></div>
+                </div>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Danh sách slot học</h4>
+                        <p class="guide__step-text">Bảng chi tiết các slot có thể thay đổi số hàng mỗi trang, giúp tổng
+                            quan các môn trong kỳ.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/edunext/2.png" alt="Danh sách slot"
+                            loading="lazy"></div>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="guide__section" id="s3">
+                <h2 class="guide__section-title">3. Slot học & Tài liệu</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Chi tiết slot học</h4>
+                        <p class="guide__step-text">Mỗi slot hiển thị: thời gian học, nội dung, tài liệu do giảng viên
+                            cung cấp, bài tập và trạng thái.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/edunext/4.png" alt="Slot học"
+                            loading="lazy"></div>
+                </div>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Thông tin bổ sung của slot</h4>
+                        <p class="guide__step-text">Lịch học, tài liệu, assignments, tin tức nổi bật, trạng thái hoạt
+                            động thành viên, link meet online.</p>
+                        <div class="tip-box">
+                            <div class="tip-box__title">💡 Mẹo từ sinh viên</div>
+                            <div class="tip-box__content">Đọc trước câu hỏi trên EduNext từ tối hôm trước để khi lên lớp
+                                có thể "on top" cuộc thảo luận ngay!</div>
+                        </div>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/edunext/5.png" alt="Thông tin slot"
+                            loading="lazy"></div>
+                </div>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Đường dẫn tài liệu & Thảo luận</h4>
+                        <p class="guide__step-text">Cung cấp link tới tài liệu chi tiết và nơi thảo luận môn học cho các
+                            nhóm sinh viên.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/edunext/6.png" alt="Tài liệu"
+                            loading="lazy"></div>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="guide__section" id="s4">
+                <h2 class="guide__section-title">4. Thảo luận & Nộp bài</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Nộp bài báo cáo</h4>
+                        <p class="guide__step-text">
+                            Vào phần Discuss → cửa sổ soạn thảo giống Word hiện ra → viết báo cáo hoặc upload
+                            file.<br><br>
+                            <strong>Tip:</strong> Có thể điều chỉnh kích thước cửa sổ bằng góc phải. Nhớ <strong>nộp
+                                bài</strong> sau khi hoàn thành!
+                        </p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/edunext/8.png" alt="Nộp bài" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="guide__section" id="s5">
+                <h2 class="guide__section-title">5. Chấm điểm & Đánh giá</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Đánh giá nhóm khác (Outside Group)</h4>
+                        <p class="guide__step-text">
+                            Sau khi hết thời gian → đọc bài nhóm khác trong mục "outside group" → đánh giá bằng
+                            sao.<br><br>
+                            <strong>Đánh giá thành viên nhóm mình:</strong><br>
+                            • Hard-working (Chăm chỉ)<br>
+                            • Good knowledge/skills (Kiến thức & kỹ năng)<br>
+                            • Teamworking (Làm việc nhóm)
+                        </p>
+                        <div class="tip-box tip-box--info">
+                            <div class="tip-box__title">ℹ️ Bảo mật</div>
+                            <div class="tip-box__content">Việc chấm điểm là bí mật — sinh viên sẽ không biết ai đã chấm
+                                mình.</div>
+                        </div>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/edunext/9.png" alt="Chấm điểm chéo"
+                            loading="lazy"></div>
+                </div>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Chấm điểm bài trình bày</h4>
+                        <p class="guide__step-text">
+                            Điểm trình bày nhóm (tối đa 4 điểm) gồm 4 tiêu chí:<br>
+                            • <strong>Keep time:</strong> Đúng giờ<br>
+                            • <strong>Meet requirements:</strong> Đúng chủ đề<br>
+                            • <strong>Presentations:</strong> Trình bày hấp dẫn<br>
+                            • <strong>Good information:</strong> Thông tin hữu ích<br><br>
+                            Tất cả sinh viên đều có quyền và phải thực hiện chấm khi giảng viên bật tính năng.
+                        </p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/edunext/10.png" alt="Chấm trình bày"
+                            loading="lazy"></div>
+                </div>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Nhận xét của giảng viên</h4>
+                        <p class="guide__step-text">Đây là nơi giảng viên cho nhận xét về bài làm để sinh viên cải thiện
+                            cho các lần sau.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/edunext/11.png" alt="Nhận xét GV"
+                            loading="lazy"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__logo"><img src="../assets/logo/logo-artboard.svg" alt="FPT Hub"><span>FPT Hub</span>
+                </div>
+                <span class="footer__text">© 2026 FPT Hub</span>
+                <div class="footer__links"><a href="../index.html" class="footer__link">Trang chủ</a></div>
+            </div>
+        </div>
+    </footer>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()"><button class="lightbox__close">✕</button><img
+            id="lightboxImg" src="" alt=""></div>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

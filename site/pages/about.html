@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu | FPT Hub</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/logo-artboard.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar__inner">
+            <a href="../index.html" class="navbar__logo"><img src="../assets/logo/logo-artboard.svg"
+                    alt="FPT Hub"><span>FPT <span class="text-gradient">Hub</span></span></a>
+            <div class="navbar__links" id="navLinks">
+                <a href="../index.html" class="navbar__link">Trang chủ</a>
+                <a href="../index.html#resources" class="navbar__link">Tài liệu</a>
+                <a href="about.html" class="navbar__link navbar__link--active">Giới thiệu</a>
+            </div>
+            <div class="navbar__actions">
+                <div id="authBtnWrap"><button class="btn btn--primary" onclick="handleLogin()" id="loginBtn">Đăng
+                        nhập</button></div>
+                <div id="userWrap" class="navbar__user" style="display:none;"><img id="userAvatar"
+                        class="navbar__avatar" src="" alt=""><span id="userName" class="navbar__username"></span><button
+                        class="btn btn--ghost" onclick="handleLogout()" style="padding:0.25rem;"><svg width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg></button></div>
+                <button class="navbar__toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="guide">
+        <div class="container">
+            <div class="guide__hero">
+                <h1 class="guide__title">ℹ️ Giới thiệu FPT Hub</h1>
+                <p class="guide__subtitle">Dự án tổng hợp thông tin trường dành cho sinh viên FPT University Hà Nội.</p>
+            </div>
+
+            <!-- Mission -->
+            <div class="guide__section">
+                <h2 class="guide__section-title">🎯 Sứ mệnh</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content" style="max-width:100%;">
+                        <p class="guide__step-text" style="font-size:1.125rem;line-height:1.8;">
+                            FPT Hub ra đời từ một nhu cầu thực tế: <strong>sinh viên năm nhất không biết phải bắt đầu từ
+                                đâu</strong> khi tiếp xúc với hệ thống FAP, FLM, EduNext và hàng loạt nền tảng của
+                            trường.<br><br>
+                            Thay vì lục tung group Facebook hay hỏi đi hỏi lại cùng một câu, chúng mình muốn tạo ra
+                            <strong>một nơi duy nhất</strong> — dễ tìm, dễ hiểu, có ảnh minh họa — để mọi sinh viên FPT
+                            đều có thể tự tra cứu.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="guide__section">
+                <h2 class="guide__section-title">✨ Tính năng nổi bật</h2>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem;">
+                    <div
+                        style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;">
+                        <div style="font-size:2rem;margin-bottom:0.5rem;">📸</div>
+                        <h4 style="margin-bottom:0.5rem;">Ảnh chụp thực tế</h4>
+                        <p style="color:var(--text-secondary);font-size:0.875rem;">Mỗi bước hướng dẫn đều kèm ảnh chụp
+                            màn hình thực tế từ hệ thống trường.</p>
+                    </div>
+                    <div
+                        style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;">
+                        <div style="font-size:2rem;margin-bottom:0.5rem;">💡</div>
+                        <h4 style="margin-bottom:0.5rem;">Mẹo từ sinh viên</h4>
+                        <p style="color:var(--text-secondary);font-size:0.875rem;">Kinh nghiệm thực chiến từ các anh chị
+                            khóa trước, không chỉ lý thuyết suông.</p>
+                    </div>
+                    <div
+                        style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;">
+                        <div style="font-size:2rem;margin-bottom:0.5rem;">🔍</div>
+                        <h4 style="margin-bottom:0.5rem;">Tìm kiếm nhanh</h4>
+                        <p style="color:var(--text-secondary);font-size:0.875rem;">Tìm tài liệu theo từ khóa hoặc lọc
+                            theo danh mục: học vụ, học tập, thi cử.</p>
+                    </div>
+                    <div
+                        style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;">
+                        <div style="font-size:2rem;margin-bottom:0.5rem;">🔒</div>
+                        <h4 style="margin-bottom:0.5rem;">Dành riêng cho FPT</h4>
+                        <p style="color:var(--text-secondary);font-size:0.875rem;">Xác thực qua email @fpt.edu.vn, đảm
+                            bảo chỉ sinh viên FPT truy cập.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Connect -->
+            <div class="guide__section">
+                <h2 class="guide__section-title">🔗 Liên hệ & Kết nối</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content" style="max-width:100%;">
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <a href="https://www.facebook.com/share/1C9CGed15R/" target="_blank" rel="noopener"
+                                class="btn btn--secondary" style="min-width:200px;justify-content:center;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                </svg>
+                                Facebook Page
+                            </a>
+                            <a href="https://github.com/Therockycloud/fpt-hub" target="_blank" rel="noopener"
+                                class="btn btn--secondary" style="min-width:200px;justify-content:center;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                GitHub Repo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="guide__section">
+                <h2 class="guide__section-title">🛠️ Công nghệ sử dụng</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content" style="max-width:100%;">
+                        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+                            <span class="badge badge--brand" style="padding:0.5rem 1rem;">HTML5</span>
+                            <span class="badge badge--brand" style="padding:0.5rem 1rem;">CSS3</span>
+                            <span class="badge badge--brand" style="padding:0.5rem 1rem;">Vanilla JS</span>
+                            <span class="badge badge--info" style="padding:0.5rem 1rem;">Firebase Auth</span>
+                            <span class="badge badge--info" style="padding:0.5rem 1rem;">GitHub Pages</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__logo"><img src="../assets/logo/logo-artboard.svg" alt="FPT Hub"><span>FPT Hub</span>
+                </div>
+                <span class="footer__text">© 2026 FPT Hub — Dự án dành cho sinh viên FPT University</span>
+                <div class="footer__links"><a href="../index.html" class="footer__link">Trang chủ</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

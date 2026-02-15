@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLM — Chương trình đào tạo | FPT Hub</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/logo-artboard.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar__inner">
+            <a href="../index.html" class="navbar__logo"><img src="../assets/logo/logo-artboard.svg"
+                    alt="FPT Hub"><span>FPT <span class="text-gradient">Hub</span></span></a>
+            <div class="navbar__links" id="navLinks">
+                <a href="../index.html" class="navbar__link">Trang chủ</a>
+                <a href="../index.html#resources" class="navbar__link navbar__link--active">Tài liệu</a>
+                <a href="about.html" class="navbar__link">Giới thiệu</a>
+            </div>
+            <div class="navbar__actions">
+                <div id="authBtnWrap"><button class="btn btn--primary" onclick="handleLogin()" id="loginBtn">Đăng
+                        nhập</button></div>
+                <div id="userWrap" class="navbar__user" style="display:none;"><img id="userAvatar"
+                        class="navbar__avatar" src="" alt=""><span id="userName" class="navbar__username"></span><button
+                        class="btn btn--ghost" onclick="handleLogout()" style="padding:0.25rem;"><svg width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg></button></div>
+                <button class="navbar__toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="guide">
+        <div class="container">
+            <div class="guide__hero">
+                <div class="guide__breadcrumb">
+                    <a href="../index.html">Trang chủ</a><span>/</span><a href="../index.html#resources">Tài
+                        liệu</a><span>/</span><span style="color:var(--text-primary)">FLM</span>
+                </div>
+                <h1 class="guide__title">🗺️ FLM — Chương trình đào tạo</h1>
+                <p class="guide__subtitle">Hệ thống quản lý khung chương trình, đề cương môn học và chuẩn đầu ra chính
+                    thức của FPT University.</p>
+                <a href="https://flm.fpt.edu.vn/Login" target="_blank" rel="noopener" class="guide__link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    Truy cập FLM
+                </a>
+            </div>
+
+            <!-- What you'll find on FLM -->
+            <div class="guide__section">
+                <h2 class="guide__section-title">📋 Bạn sẽ tìm thấy gì trên FLM?</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <p class="guide__step-text">Dù giao diện có phần "khô khan", FLM là <strong>mỏ vàng thông
+                                tin</strong> cho sinh viên muốn học tập có kế hoạch:</p>
+                        <ul style="color:var(--text-secondary);padding-left:1.5rem;line-height:2;">
+                            <li><strong>Trọng số điểm chi tiết:</strong> Biết chính xác số cột điểm (Quiz, Lab,
+                                Assignment, Presentation, FE)</li>
+                            <li><strong>Hình thức thi cuối kỳ:</strong> Trắc nghiệm EOS, tiểu luận (Essay), hay vấn đáp
+                                (Oral Exam)</li>
+                            <li><strong>Số lượng tín chỉ:</strong> Theo dõi tiến độ tốt nghiệp đúng hạn</li>
+                            <li><strong>Cấu trúc Slot:</strong> Biết Slot 1-30 giảng viên dạy gì để chuẩn bị trước</li>
+                        </ul>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/flm/title.png" alt="FLM Overview"
+                            loading="lazy"></div>
+                </div>
+            </div>
+
+            <!-- Tips -->
+            <div class="guide__section">
+                <h2 class="guide__section-title">💡 Mẹo sử dụng FLM hiệu quả</h2>
+
+                <div class="tip-box" style="margin-bottom:1.5rem;">
+                    <div class="tip-box__title">🎯 Chiến thuật "Cày điểm"</div>
+                    <div class="tip-box__content">Vào FLM ngay đầu kỳ để xem bài nào chiếm % điểm cao nhất. Đừng dồn sức
+                        vào bài 5% mà bỏ lơ bài 20%!</div>
+                </div>
+
+                <div class="tip-box tip-box--warning" style="margin-bottom:1.5rem;">
+                    <div class="tip-box__title">⚠️ Lộ trình an toàn</div>
+                    <div class="tip-box__content">Luôn kiểm tra "Prerequisite" (môn tiên quyết) trên FLM để không bị
+                        "kẹt" lịch học ở các kỳ sau chỉ vì trượt một môn nhỏ.</div>
+                </div>
+
+                <div class="tip-box tip-box--info">
+                    <div class="tip-box__title">📚 Săn sách sớm</div>
+                    <div class="tip-box__content">Biết tên chính xác giáo trình trên FLM giúp bạn nhanh chân mượn sách
+                        "xịn" tại thư viện trước khi cả khối đổ xô đi mượn.</div>
+                </div>
+            </div>
+
+            <!-- Screenshots -->
+            <div class="guide__section">
+                <h2 class="guide__section-title">📸 Giao diện FLM</h2>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Syllabus & Đề cương môn học</h4>
+                        <p class="guide__step-text">Cung cấp đề cương chi tiết, trọng số điểm (grading weights) và chuẩn
+                            đầu ra (CLO) của từng môn.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/flm/1.png" alt="Syllabus" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Điều kiện tiên quyết & Giáo trình</h4>
+                        <p class="guide__step-text">Quy định môn học phải Pass trước khi đăng ký môn tiếp theo. Danh
+                            sách giáo trình được nhà trường phê duyệt.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/flm/2.png" alt="Prerequisites"
+                            loading="lazy"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__logo"><img src="../assets/logo/logo-artboard.svg" alt="FPT Hub"><span>FPT Hub</span>
+                </div>
+                <span class="footer__text">© 2026 FPT Hub</span>
+                <div class="footer__links"><a href="../index.html" class="footer__link">Trang chủ</a></div>
+            </div>
+        </div>
+    </footer>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()"><button class="lightbox__close">✕</button><img
+            id="lightboxImg" src="" alt=""></div>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ sinh thái Học tập FPT | FPT Hub</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/logo-artboard.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar__inner">
+            <a href="../index.html" class="navbar__logo"><img src="../assets/logo/logo-artboard.svg"
+                    alt="FPT Hub"><span>FPT <span class="text-gradient">Hub</span></span></a>
+            <div class="navbar__links" id="navLinks">
+                <a href="../index.html" class="navbar__link">Trang chủ</a>
+                <a href="../index.html#resources" class="navbar__link navbar__link--active">Tài liệu</a>
+                <a href="about.html" class="navbar__link">Giới thiệu</a>
+            </div>
+            <div class="navbar__actions">
+                <div id="authBtnWrap"><button class="btn btn--primary" onclick="handleLogin()" id="loginBtn">Đăng
+                        nhập</button></div>
+                <div id="userWrap" class="navbar__user" style="display:none;"><img id="userAvatar"
+                        class="navbar__avatar" src="" alt=""><span id="userName" class="navbar__username"></span><button
+                        class="btn btn--ghost" onclick="handleLogout()" style="padding:0.25rem;"><svg width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg></button></div>
+                <button class="navbar__toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="guide">
+        <div class="container">
+            <div class="guide__hero">
+                <div class="guide__breadcrumb">
+                    <a href="../index.html">Trang chủ</a><span>/</span><a href="../index.html#resources">Tài
+                        liệu</a><span>/</span><span style="color:var(--text-primary)">Hệ sinh thái Học tập</span>
+                </div>
+                <h1 class="guide__title">🌐 Hệ sinh thái Học tập FPT University</h1>
+                <p class="guide__subtitle">Tổng quan 5 nền tảng học tập chính thức: CMS, Coursera, EduNext, Thư viện số
+                    và FLM — cùng lộ trình thông thạo.</p>
+            </div>
+
+            <!-- Overview Map -->
+            <div class="guide__section">
+                <h2 class="guide__section-title">🗺️ Bản đồ hệ sinh thái</h2>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+
+                    <div
+                        style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;">
+                        <h3 style="color:var(--brand-accent);font-size:1.125rem;margin-bottom:0.75rem;">📘 CMS</h3>
+                        <p style="color:var(--text-secondary);font-size:0.875rem;line-height:1.6;">Kho tài liệu chính
+                            thức: slide bài giảng, bài tập, tài liệu hướng dẫn, file mẫu. Được giảng viên cập nhật theo
+                            từng slot.</p>
+                        <a href="https://cmshn.fpt.edu.vn/" target="_blank" rel="noopener" class="guide__link"
+                            style="margin-top:1rem;">Truy cập CMS →</a>
+                    </div>
+
+                    <div
+                        style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;">
+                        <h3 style="color:var(--brand-accent);font-size:1.125rem;margin-bottom:0.75rem;">🎓 Coursera</h3>
+                        <p style="color:var(--text-secondary);font-size:0.875rem;line-height:1.6;">Truy cập miễn phí
+                            hàng ngàn khóa học online từ MIT, Stanford, Google. Một số môn yêu cầu hoàn thành Coursera
+                            để lấy điểm.</p>
+                    </div>
+
+                    <div
+                        style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;">
+                        <h3 style="color:var(--brand-accent);font-size:1.125rem;margin-bottom:0.75rem;">💬 EduNext</h3>
+                        <p style="color:var(--text-secondary);font-size:0.875rem;line-height:1.6;">Nền tảng thảo luận
+                            nhóm, đánh giá chéo. Hoạt động EduNext chiếm 20-25% điểm môn học.</p>
+                        <a href="edunext.html" class="guide__link" style="margin-top:1rem;">Xem hướng dẫn →</a>
+                    </div>
+
+                    <div
+                        style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;">
+                        <h3 style="color:var(--brand-accent);font-size:1.125rem;margin-bottom:0.75rem;">📚 Thư viện số
+                        </h3>
+                        <p style="color:var(--text-secondary);font-size:0.875rem;line-height:1.6;">Mượn sách điện tử,
+                            tra cứu tài liệu tham khảo, truy cập database học thuật (IEEE, Springer...).</p>
+                        <a href="https://library.fpt.edu.vn" target="_blank" rel="noopener" class="guide__link"
+                            style="margin-top:1rem;">Truy cập thư viện →</a>
+                    </div>
+
+                    <div
+                        style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;">
+                        <h3 style="color:var(--brand-accent);font-size:1.125rem;margin-bottom:0.75rem;">🗺️ FLM</h3>
+                        <p style="color:var(--text-secondary);font-size:0.875rem;line-height:1.6;">Quản lý đề cương,
+                            trọng số điểm, giáo trình. Xem FLM mỗi đầu kỳ để lập kế hoạch học tập.</p>
+                        <a href="flm.html" class="guide__link" style="margin-top:1rem;">Xem hướng dẫn →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CMS Details -->
+            <div class="guide__section">
+                <h2 class="guide__section-title">📘 CMS — Hệ thống Quản lý Nội dung</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Vai trò & Cách sử dụng</h4>
+                        <p class="guide__step-text">
+                            CMS (Content Management System) là kho tài liệu học tập chính thức do giảng viên upload cho
+                            sinh viên mỗi slot.<br><br>
+                            <strong>Bạn sẽ tìm thấy:</strong> Slide bài giảng, bài lab, đề thi mẫu, code template, và
+                            các file hướng dẫn.
+                        </p>
+                        <div class="tip-box">
+                            <div class="tip-box__title">💡 Quy định chính thức</div>
+                            <div class="tip-box__content">
+                                • Mỗi slot có tài liệu riêng, giảng viên upload trước buổi học<br>
+                                • Tài liệu có thể bao gồm: slides, lab guides, sample code<br>
+                                • Một số môn yêu cầu tải slide trước khi vào lớp
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coursera Details -->
+            <div class="guide__section">
+                <h2 class="guide__section-title">🎓 Coursera — Học trực tuyến</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Tài khoản & Cách đăng ký</h4>
+                        <p class="guide__step-text">
+                            FPT cung cấp tài khoản Coursera for Campus <strong>miễn phí</strong>. Đăng ký bằng email
+                            @fpt.edu.vn để được kích hoạt.
+                        </p>
+                        <div class="tip-box tip-box--warning">
+                            <div class="tip-box__title">⚠️ Quan trọng</div>
+                            <div class="tip-box__content">
+                                • Một số môn yêu cầu hoàn thành khóa Coursera để lấy điểm thành phần<br>
+                                • Bạn nhận certificate miễn phí khi hoàn thành — rất tốt cho CV!<br>
+                                • Nên hoàn thành sớm, đừng chờ đến deadline
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Library -->
+            <div class="guide__section">
+                <h2 class="guide__section-title">📚 Thư viện số — Digital Library</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Tài nguyên có sẵn</h4>
+                        <p class="guide__step-text">
+                            <strong>Truy cập database học thuật:</strong> IEEE Xplore, Springer, Elsevier (miễn phí qua
+                            VPN trường)<br><br>
+                            <strong>Mượn sách:</strong> Tối đa 3 cuốn/lần, thời hạn 14 ngày, gia hạn online
+                        </p>
+                        <div class="tip-box tip-box--info">
+                            <div class="tip-box__title">ℹ️ Mẹo từ sinh viên</div>
+                            <div class="tip-box__content">FLM liệt kê giáo trình chính thức — dùng tên sách để tìm trên
+                                thư viện số, mượn ngay tuần đầu kỳ trước khi hết sách!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__logo"><img src="../assets/logo/logo-artboard.svg" alt="FPT Hub"><span>FPT Hub</span>
+                </div>
+                <span class="footer__text">© 2026 FPT Hub</span>
+                <div class="footer__links"><a href="../index.html" class="footer__link">Trang chủ</a></div>
+            </div>
+        </div>
+    </footer>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()"><button class="lightbox__close">✕</button><img
+            id="lightboxImg" src="" alt=""></div>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

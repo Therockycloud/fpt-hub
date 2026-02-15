@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAP — Bảng điểm & Đăng ký | FPT Hub</title>
+    <meta name="description"
+        content="Hướng dẫn xem bảng điểm, khung chương trình, đăng ký môn học trên FAP cho sinh viên FPT.">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/logo-artboard.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__inner">
+            <a href="../index.html" class="navbar__logo">
+                <img src="../assets/logo/logo-artboard.svg" alt="FPT Hub">
+                <span>FPT <span class="text-gradient">Hub</span></span>
+            </a>
+            <div class="navbar__links" id="navLinks">
+                <a href="../index.html" class="navbar__link">Trang chủ</a>
+                <a href="../index.html#resources" class="navbar__link navbar__link--active">Tài liệu</a>
+                <a href="about.html" class="navbar__link">Giới thiệu</a>
+            </div>
+            <div class="navbar__actions">
+                <div id="authBtnWrap"><button class="btn btn--primary" onclick="handleLogin()" id="loginBtn">Đăng
+                        nhập</button></div>
+                <div id="userWrap" class="navbar__user" style="display:none;">
+                    <img id="userAvatar" class="navbar__avatar" src="" alt="">
+                    <span id="userName" class="navbar__username"></span>
+                    <button class="btn btn--ghost" onclick="handleLogout()" title="Đăng xuất" style="padding:0.25rem;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg>
+                    </button>
+                </div>
+                <button class="navbar__toggle" id="navToggle"
+                    onclick="toggleNav()"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="guide">
+        <div class="container">
+            <!-- Hero -->
+            <div class="guide__hero">
+                <div class="guide__breadcrumb">
+                    <a href="../index.html">Trang chủ</a>
+                    <span>/</span>
+                    <a href="../index.html#resources">Tài liệu</a>
+                    <span>/</span>
+                    <span style="color:var(--text-primary)">FAP — Bảng điểm & Đăng ký</span>
+                </div>
+                <h1 class="guide__title">📊 FAP — Bảng điểm & Đăng ký môn học</h1>
+                <p class="guide__subtitle">Hướng dẫn chi tiết cách xem bảng điểm, khung chương trình, đăng ký môn học và
+                    các thủ tục xếp lớp trên FPT Academic Portal.</p>
+                <a href="https://fap.fpt.edu.vn/Thongbao.aspx" target="_blank" rel="noopener" class="guide__link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    Truy cập FAP
+                </a>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="guide__toc">
+                <h3>📑 Mục lục</h3>
+                <ol>
+                    <li><a href="#section-1">Giao diện tổng quan</a></li>
+                    <li><a href="#section-2">Bảng điểm & Cách tính điểm</a></li>
+                    <li><a href="#section-3">Khung chương trình</a></li>
+                    <li><a href="#section-4">Đăng ký môn học</a></li>
+                    <li><a href="#section-5">Xếp lớp & Chuyển lớp</a></li>
+                </ol>
+            </div>
+
+            <!-- Section 1: Overview -->
+            <div class="guide__section" id="section-1">
+                <h2 class="guide__section-title">1. Giao diện tổng quan</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Trang chủ FAP</h4>
+                        <p class="guide__step-text">Giao diện chính của FPT Academic Portal bao gồm các mục thông báo,
+                            tra cứu thông tin, đăng ký môn học và thủ tục hành chính.</p>
+                    </div>
+                    <div class="guide__step-img">
+                        <img src="../assets/guides/fap/1.png" alt="Giao diện FAP" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Grades -->
+            <div class="guide__section" id="section-2">
+                <h2 class="guide__section-title">2. Bảng điểm & Cách tính điểm</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Xem bảng điểm theo kỳ</h4>
+                        <p class="guide__step-text">Chọn kỳ học hiện tại (Xuân/Hạ/Thu Đông), chọn môn học muốn xem bảng
+                            điểm, và report bảng điểm môn học đã chọn.</p>
+                    </div>
+                    <div class="guide__step-img">
+                        <img src="../assets/guides/fap/3.png" alt="Bảng điểm" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Cách tính điểm</h4>
+                        <p class="guide__step-text">Điểm được tính dựa trên report của trường. Mỗi môn có các thành phần
+                            điểm khác nhau (Quiz, Lab, Assignment, Final Exam). Xem chi tiết trọng số trên FLM.</p>
+                        <div class="tip-box tip-box--warning">
+                            <div class="tip-box__title">⚠️ Lưu ý quan trọng</div>
+                            <div class="tip-box__content">Với một số ngành (SE), điểm Practical Exam phải trên 3-4 điểm.
+                                Final Exam < 4 sẽ bị trượt môn dù các điểm thành phần khác cao.</div>
+                            </div>
+                        </div>
+                        <div class="guide__step-img">
+                            <img src="../assets/guides/fap/4.png" alt="Cách tính điểm" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Curriculum -->
+                <div class="guide__section" id="section-3">
+                    <h2 class="guide__section-title">3. Khung chương trình</h2>
+                    <div class="guide__step">
+                        <div class="guide__step-content">
+                            <h4 class="guide__step-title">Xem khung chương trình</h4>
+                            <p class="guide__step-text">Tab khung chương trình hiển thị mã môn học, tên môn học, số thứ
+                                tự và môn học thuộc kỳ thứ mấy trong chương trình đào tạo.</p>
+                        </div>
+                        <div class="guide__step-img">
+                            <img src="../assets/guides/fap/6.png" alt="Khung chương trình" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4: Registration -->
+                <div class="guide__section" id="section-4">
+                    <h2 class="guide__section-title">4. Đăng ký môn học</h2>
+
+                    <div class="tip-box">
+                        <div class="tip-box__title">💡 Các loại đăng ký trên FAP</div>
+                        <div class="tip-box__content">
+                            FAP cung cấp nhiều tab đăng ký khác nhau: đăng ký ngoại ngữ nước ngoài, học đi chậm kỳ, học
+                            cải thiện điểm, học lại, hủy khóa học, môn tự chọn, wishlist, học vượt kỳ, và phụ đạo.
+                        </div>
+                    </div>
+
+                    <div class="guide__step">
+                        <div class="guide__step-content">
+                            <h4 class="guide__step-title">Đăng ký học ngoại ngữ nước ngoài</h4>
+                            <p class="guide__step-text">
+                                <strong>Account balance:</strong> Số tiền trong ví dng. Đăng ký lần đầu trả 100% học
+                                phí, trượt lần đầu đăng ký lại trong block 5 được giảm 50%.<br><br>
+                                <strong>Cơ sở:</strong> Chọn cơ sở đang học.<br>
+                                <strong>Mã môn học:</strong> LUK hoặc Trans.<br>
+                                <strong>Save:</strong> Lưu và gửi đơn đăng ký.
+                            </p>
+                        </div>
+                        <div class="guide__step-img">
+                            <img src="../assets/guides/fap/8.png" alt="Đăng ký ngoại ngữ" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="guide__step">
+                        <div class="guide__step-content">
+                            <h4 class="guide__step-title">Đăng ký học cải thiện điểm</h4>
+                            <p class="guide__step-text">Dành cho sinh viên không hài lòng với điểm số của các môn kỳ
+                                trước. Kết quả mới (dù tốt hơn, tệ hơn hay không đổi) sẽ thay thế điểm cũ trong học bạ.
+                            </p>
+                        </div>
+                        <div class="guide__step-img">
+                            <img src="../assets/guides/fap/10.png" alt="Cải thiện điểm" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="guide__step">
+                        <div class="guide__step-content">
+                            <h4 class="guide__step-title">Đăng ký Wishlist</h4>
+                            <p class="guide__step-text">Nếu muốn học lại nhưng không có lớp phù hợp, đăng ký wishlist để
+                                giữ giảm giá 50% và chọn học trong kỳ khác. Hoặc dùng để chọn lớp cho các kỳ tới.</p>
+                        </div>
+                        <div class="guide__step-img">
+                            <img src="../assets/guides/fap/14.png" alt="Wishlist" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 5: Class Assignment -->
+                <div class="guide__section" id="section-5">
+                    <h2 class="guide__section-title">5. Xếp lớp & Chuyển lớp</h2>
+
+                    <div class="guide__step">
+                        <div class="guide__step-content">
+                            <h4 class="guide__step-title">Chuyển lớp</h4>
+                            <p class="guide__step-text">Tab chuyển lớp cho phép bạn chuyển vào các lớp còn trống phù hợp
+                                với nguyện vọng. Chỉ hiển thị các lớp còn chỗ.</p>
+                        </div>
+                        <div class="guide__step-img">
+                            <img src="../assets/guides/fap/18.png" alt="Chuyển lớp" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="guide__step">
+                        <div class="guide__step-content">
+                            <h4 class="guide__step-title">Đổi chéo lớp</h4>
+                            <p class="guide__step-text">Khi muốn đổi sang một lớp đã full, bạn cần đổi chéo với sinh
+                                viên lớp đó. Cả hai bên cùng đồng ý thì việc đổi sẽ được thực hiện.</p>
+                            <div class="tip-box tip-box--info">
+                                <div class="tip-box__title">💡 Mẹo từ sinh viên</div>
+                                <div class="tip-box__content">Hãy đăng bài lên group lớp hoặc group khóa để tìm người
+                                    đổi chéo. Nên xác nhận sớm vì slot thường hết nhanh vào đầu kỳ.</div>
+                            </div>
+                        </div>
+                        <div class="guide__step-img">
+                            <img src="../assets/guides/fap/19.png" alt="Đổi chéo lớp" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__logo">
+                    <img src="../assets/logo/logo-artboard.svg" alt="FPT Hub">
+                    <span>FPT Hub</span>
+                </div>
+                <span class="footer__text">© 2026 FPT Hub — Dự án dành cho sinh viên FPT University</span>
+                <div class="footer__links">
+                    <a href="../index.html" class="footer__link">Trang chủ</a>
+                    <a href="about.html" class="footer__link">Giới thiệu</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="lightbox__close" onclick="closeLightbox()">✕</button>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

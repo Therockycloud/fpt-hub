@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAP — Thi cử (SEB/EOS) | FPT Hub</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/logo-artboard.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar__inner">
+            <a href="../index.html" class="navbar__logo"><img src="../assets/logo/logo-artboard.svg"
+                    alt="FPT Hub"><span>FPT <span class="text-gradient">Hub</span></span></a>
+            <div class="navbar__links" id="navLinks">
+                <a href="../index.html" class="navbar__link">Trang chủ</a>
+                <a href="../index.html#resources" class="navbar__link navbar__link--active">Tài liệu</a>
+                <a href="about.html" class="navbar__link">Giới thiệu</a>
+            </div>
+            <div class="navbar__actions">
+                <div id="authBtnWrap"><button class="btn btn--primary" onclick="handleLogin()" id="loginBtn">Đăng
+                        nhập</button></div>
+                <div id="userWrap" class="navbar__user" style="display:none;"><img id="userAvatar"
+                        class="navbar__avatar" src="" alt=""><span id="userName" class="navbar__username"></span><button
+                        class="btn btn--ghost" onclick="handleLogout()" style="padding:0.25rem;"><svg width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg></button></div>
+                <button class="navbar__toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="guide">
+        <div class="container">
+            <div class="guide__hero">
+                <div class="guide__breadcrumb">
+                    <a href="../index.html">Trang chủ</a><span>/</span><a href="../index.html#resources">Tài
+                        liệu</a><span>/</span><span style="color:var(--text-primary)">FAP — Thi cử</span>
+                </div>
+                <h1 class="guide__title">📝 FAP — Thi cử (SEB/EOS)</h1>
+                <p class="guide__subtitle">Hướng dẫn cài đặt phần mềm thi SEB/EOS, quy chế thi, xử lý lỗi phổ biến và
+                    quy trình phúc khảo.</p>
+                <a href="https://fap.fpt.edu.vn/Thongbao.aspx" target="_blank" rel="noopener" class="guide__link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    Truy cập FAP
+                </a>
+            </div>
+
+            <div class="guide__toc">
+                <h3>📑 Mục lục</h3>
+                <ol>
+                    <li><a href="#s1">Tải & Cài đặt SEB/EOS</a></li>
+                    <li><a href="#s2">Xử lý lỗi phần mềm</a></li>
+                    <li><a href="#s3">Chuẩn bị trước khi thi</a></li>
+                    <li><a href="#s4">Quy chế & Nội quy phòng thi</a></li>
+                    <li><a href="#s5">Xử lý sự cố trong khi thi</a></li>
+                    <li><a href="#s6">Phúc khảo bài thi</a></li>
+                </ol>
+            </div>
+
+            <!-- Section 1 -->
+            <div class="guide__section" id="s1">
+                <h2 class="guide__section-title">1. Tải & Cài đặt SEB/EOS</h2>
+                <div class="tip-box tip-box--info">
+                    <div class="tip-box__title">ℹ️ SEB vs EOS</div>
+                    <div class="tip-box__content">
+                        <strong>SEB (Safe Exam Browser):</strong> Dùng cho các bài kiểm tra nhỏ (Quiz, PE)<br>
+                        <strong>EOS Client:</strong> Dùng cho kỳ thi chính (Final Exam)
+                    </div>
+                </div>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Link tải chính thức</h4>
+                        <p class="guide__step-text">Trang FAP cung cấp link tải SEB và EOS. Nếu link chính bị lỗi, dùng
+                            bản backup.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/fap/1.png" alt="Tải SEB/EOS" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Cài đặt trên macOS</h4>
+                        <p class="guide__step-text">Tải file .pkg từ Google Drive → thư mục MacBook → chạy cài đặt →
+                            hoàn tất trong Download.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/fap/4.png" alt="SEB macOS" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Cài đặt trên Windows</h4>
+                        <p class="guide__step-text">Giải nén file zip bằng Extract All → chạy file cài đặt.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/fap/7.png" alt="SEB Windows" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Cài đặt EOS Client</h4>
+                        <p class="guide__step-text">Giải nén và chạy <strong>Run as Administrator</strong>.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/fap/13.png" alt="EOS install"
+                            loading="lazy"></div>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="guide__section" id="s2">
+                <h2 class="guide__section-title">2. Xử lý lỗi phần mềm</h2>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Lỗi Start Session Error</h4>
+                        <p class="guide__step-text">Cài lại <strong>Visual C++ Redistributable</strong> để khắc phục lỗi
+                            này.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/fap/10.png" alt="Start Session Error"
+                            loading="lazy"></div>
+                </div>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Lỗi Prohibited Display Configuration</h4>
+                        <p class="guide__step-text">Gỡ driver màn hình trong Device Manager để khắc phục.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/fap/12.png" alt="Display error"
+                            loading="lazy"></div>
+                </div>
+
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Gỡ và cài lại SEB</h4>
+                        <p class="guide__step-text">Dùng <strong>Microsoft Program Install and Uninstall</strong> hoặc
+                            Control Panel để gỡ hoàn toàn, xóa cache nếu cần.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/fap/8.png" alt="Uninstall SEB"
+                            loading="lazy"></div>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="guide__section" id="s3">
+                <h2 class="guide__section-title">3. Chuẩn bị trước khi thi</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Checklist chuẩn bị</h4>
+                        <p class="guide__step-text">
+                            ✅ Máy Windows, phần mềm mới nhất<br>
+                            ✅ Kết nối WiFi <strong>FPT_EXAMONLINE</strong><br>
+                            ✅ Tai nghe (cho bài thi Listening)<br>
+                            ✅ Font chữ, bộ gõ tiếng Việt<br>
+                            ✅ Quyền Administrator
+                        </p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/fap/15.png" alt="Chuẩn bị thi"
+                            loading="lazy"></div>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="guide__section" id="s4">
+                <h2 class="guide__section-title">4. Quy chế phòng thi</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <p class="guide__step-text">
+                            • Đến <strong>đúng giờ</strong> với giấy tờ tùy thân<br>
+                            • Giữ trật tự, tuân thủ nội quy<br>
+                            • <strong>Không gian lận</strong> — vi phạm sẽ bị kỷ luật
+                        </p>
+                        <div class="tip-box tip-box--warning">
+                            <div class="tip-box__title">⚠️ Lưu ý nghiêm trọng</div>
+                            <div class="tip-box__content">Mọi hành vi gian lận sẽ bị ghi nhận và xử lý kỷ luật theo quy
+                                chế nhà trường.</div>
+                        </div>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/fap/21.png" alt="Nội quy thi"
+                            loading="lazy"></div>
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="guide__section" id="s5">
+                <h2 class="guide__section-title">5. Xử lý sự cố trong khi thi</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <p class="guide__step-text">
+                            • Nếu máy bị treo: <strong>tắt máy và báo giám thị</strong><br>
+                            • Lỗi đăng nhập / mạng / exam code: kiểm tra kết nối hoặc báo giám thị<br>
+                            • Không chọn được đáp án: điều chỉnh scale màn hình và bộ gõ
+                        </p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/fap/19.png" alt="Sự cố khi thi"
+                            loading="lazy"></div>
+                </div>
+            </div>
+
+            <!-- Section 6 -->
+            <div class="guide__section" id="s6">
+                <h2 class="guide__section-title">6. Phúc khảo bài thi</h2>
+                <div class="guide__step">
+                    <div class="guide__step-content">
+                        <h4 class="guide__step-title">Gửi đơn phúc khảo</h4>
+                        <p class="guide__step-text">Truy cập FPT Academic Portal → chọn <strong>Send
+                                Application</strong> → điền đầy đủ thông tin phúc khảo.</p>
+                    </div>
+                    <div class="guide__step-img"><img src="../assets/guides/fap/22.png" alt="Phúc khảo" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__logo"><img src="../assets/logo/logo-artboard.svg" alt="FPT Hub"><span>FPT Hub</span>
+                </div>
+                <span class="footer__text">© 2026 FPT Hub</span>
+                <div class="footer__links"><a href="../index.html" class="footer__link">Trang chủ</a></div>
+            </div>
+        </div>
+    </footer>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()"><button class="lightbox__close">✕</button><img
+            id="lightboxImg" src="" alt=""></div>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>
