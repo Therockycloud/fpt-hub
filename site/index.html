@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FPT Hub — Tổng hợp thông tin dành cho sinh viên FPT</title>
-  <meta name="description" content="FPT Hub - Nền tảng tổng hợp hướng dẫn sử dụng FAP, FLM, EduNext và các hệ thống trường dành riêng cho sinh viên FPT University.">
+  <meta name="description"
+    content="FPT Hub - Nền tảng tổng hợp hướng dẫn sử dụng FAP, FLM, EduNext và các hệ thống trường dành riêng cho sinh viên FPT University.">
   <link rel="icon" type="image/svg+xml" href="assets/logo/logo-artboard.svg">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <!-- Loading Screen -->
   <div id="loadingScreen" class="loading-screen" style="display:none;">
@@ -25,13 +28,19 @@
       <div class="navbar__links" id="navLinks">
         <a href="index.html" class="navbar__link navbar__link--active">Trang chủ</a>
         <a href="#resources" class="navbar__link" id="navResources">Tài liệu</a>
+        <a href="pages/clubs.html" class="navbar__link">CLB</a>
         <a href="pages/about.html" class="navbar__link">Giới thiệu</a>
       </div>
       <div class="navbar__actions">
         <!-- Before login -->
         <div id="authBtnWrap">
           <button class="btn btn--primary" onclick="handleLogin()" id="loginBtn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+              <polyline points="10 17 15 12 10 7" />
+              <line x1="15" y1="12" x2="3" y2="12" />
+            </svg>
             Đăng nhập
           </button>
         </div>
@@ -40,7 +49,12 @@
           <img id="userAvatar" class="navbar__avatar" src="" alt="">
           <span id="userName" class="navbar__username"></span>
           <button class="btn btn--ghost" onclick="handleLogout()" title="Đăng xuất" style="padding:0.25rem;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <polyline points="16 17 21 12 16 7" />
+              <line x1="21" y1="12" x2="9" y2="12" />
+            </svg>
           </button>
         </div>
         <button class="navbar__toggle" id="navToggle" onclick="toggleNav()">
@@ -63,15 +77,29 @@
         <span class="text-gradient">một nơi duy nhất.</span>
       </h1>
       <p class="hero__subtitle">
-        FPT Hub tổng hợp hướng dẫn sử dụng FAP, FLM, EduNext cùng mọi thông tin cần thiết cho sinh viên FPT University Hà Nội.
+        FPT Hub tổng hợp hướng dẫn sử dụng FAP, FLM, EduNext cùng mọi thông tin cần thiết cho sinh viên FPT University
+        Hà Nội.
       </p>
       <div class="hero__actions">
         <button class="btn btn--primary btn--large" onclick="handleLogin()" id="heroLoginBtn">
-          <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.9 33 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 5.9 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.3 15.7 18.8 13 24 13c3 0 5.8 1.1 7.9 3l5.7-5.7C34 5.9 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-1.8 13.4-5.1l-6.2-5.2C29.2 35.2 26.7 36 24 36c-5.2 0-9.6-3-11.7-7.4l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4-4.1 5.2l6.2 5.2C36.8 38.9 44 34 44 24c0-1.3-.1-2.7-.4-3.9z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 48 48">
+            <path fill="#FFC107"
+              d="M43.6 20.1H42V20H24v8h11.3C33.9 33 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 5.9 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.9z" />
+            <path fill="#FF3D00"
+              d="M6.3 14.7l6.6 4.8C14.3 15.7 18.8 13 24 13c3 0 5.8 1.1 7.9 3l5.7-5.7C34 5.9 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z" />
+            <path fill="#4CAF50"
+              d="M24 44c5.2 0 9.9-1.8 13.4-5.1l-6.2-5.2C29.2 35.2 26.7 36 24 36c-5.2 0-9.6-3-11.7-7.4l-6.5 5C9.5 39.6 16.2 44 24 44z" />
+            <path fill="#1976D2"
+              d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4-4.1 5.2l6.2 5.2C36.8 38.9 44 34 44 24c0-1.3-.1-2.7-.4-3.9z" />
+          </svg>
           Đăng nhập bằng Google FPT
         </button>
         <a href="#resources" class="btn btn--secondary btn--large" id="heroExploreBtn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
           Xem thử tài liệu
         </a>
       </div>
@@ -81,8 +109,8 @@
           <span class="hero__stat-label">Hệ thống hướng dẫn</span>
         </div>
         <div>
-          <span class="hero__stat-num">80+</span>
-          <span class="hero__stat-label">Ảnh chụp màn hình</span>
+          <span class="hero__stat-num">30+</span>
+          <span class="hero__stat-label">Câu lạc bộ</span>
         </div>
         <div>
           <span class="hero__stat-num">100%</span>
@@ -103,8 +131,13 @@
       <!-- Search -->
       <div class="search-bar">
         <div class="search-bar__wrapper">
-          <svg class="search-bar__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" class="search-bar__input" placeholder="Tìm kiếm tài liệu..." id="searchInput" oninput="filterCards()">
+          <svg class="search-bar__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input type="text" class="search-bar__input" placeholder="Tìm kiếm tài liệu..." id="searchInput"
+            oninput="filterCards()">
         </div>
       </div>
 
@@ -123,7 +156,8 @@
         <a href="pages/fap-grades.html" class="card" data-category="academic" data-title="FAP Bảng điểm & Đăng ký">
           <div class="card__icon card__icon--fap">📊</div>
           <h3 class="card__title">FAP — Bảng điểm & Đăng ký</h3>
-          <p class="card__desc">Hướng dẫn xem bảng điểm, khung chương trình, đăng ký môn học, chuyển lớp và các thủ tục hành chính.</p>
+          <p class="card__desc">Hướng dẫn xem bảng điểm, khung chương trình, đăng ký môn học, chuyển lớp và các thủ tục
+            hành chính.</p>
           <div class="card__meta">
             <div class="card__tags">
               <span class="badge badge--brand">Học vụ</span>
@@ -137,7 +171,8 @@
         <a href="pages/fap-basics.html" class="card" data-category="academic" data-title="FAP Đăng nhập & Thanh toán">
           <div class="card__icon card__icon--fap">🔑</div>
           <h3 class="card__title">FAP — Đăng nhập & Thanh toán</h3>
-          <p class="card__desc">Cách đăng nhập hệ thống, thanh toán học phí, xem thời khóa biểu, điểm danh và thủ tục bảo lưu.</p>
+          <p class="card__desc">Cách đăng nhập hệ thống, thanh toán học phí, xem thời khóa biểu, điểm danh và thủ tục
+            bảo lưu.</p>
           <div class="card__meta">
             <div class="card__tags">
               <span class="badge badge--brand">Học vụ</span>
@@ -151,7 +186,8 @@
         <a href="pages/fap-exams.html" class="card" data-category="exam" data-title="FAP SEB EOS Thi cử">
           <div class="card__icon card__icon--seb">📝</div>
           <h3 class="card__title">FAP — Thi cử (SEB/EOS)</h3>
-          <p class="card__desc">Hướng dẫn cài đặt SEB, EOS Client, quy chế thi, xử lý lỗi phần mềm thi và phúc khảo bài thi.</p>
+          <p class="card__desc">Hướng dẫn cài đặt SEB, EOS Client, quy chế thi, xử lý lỗi phần mềm thi và phúc khảo bài
+            thi.</p>
           <div class="card__meta">
             <div class="card__tags">
               <span class="badge badge--brand">Thi cử</span>
@@ -165,7 +201,8 @@
         <a href="pages/edunext.html" class="card" data-category="learning" data-title="EduNext Thảo luận Nhóm">
           <div class="card__icon card__icon--edunext">💬</div>
           <h3 class="card__title">EduNext — Thảo luận & Nhóm</h3>
-          <p class="card__desc">Đăng nhập, tham gia slot học, thảo luận nhóm, nộp bài, chấm điểm chéo và đánh giá trên EduNext.</p>
+          <p class="card__desc">Đăng nhập, tham gia slot học, thảo luận nhóm, nộp bài, chấm điểm chéo và đánh giá trên
+            EduNext.</p>
           <div class="card__meta">
             <div class="card__tags">
               <span class="badge badge--info">Học tập</span>
@@ -179,7 +216,8 @@
         <a href="pages/flm.html" class="card" data-category="learning" data-title="FLM Quản lý Chương trình học">
           <div class="card__icon card__icon--flm">🗺️</div>
           <h3 class="card__title">FLM — Chương trình đào tạo</h3>
-          <p class="card__desc">Xem đề cương môn học, trọng số điểm, điều kiện tiên quyết, danh sách giáo trình trên FLM.</p>
+          <p class="card__desc">Xem đề cương môn học, trọng số điểm, điều kiện tiên quyết, danh sách giáo trình trên
+            FLM.</p>
           <div class="card__meta">
             <div class="card__tags">
               <span class="badge badge--info">Học tập</span>
@@ -190,10 +228,12 @@
         </a>
 
         <!-- Learning Ecosystem Overview -->
-        <a href="pages/ecosystem.html" class="card" data-category="info" data-title="Hệ sinh thái Học tập FPT CMS Coursera">
+        <a href="pages/ecosystem.html" class="card" data-category="info"
+          data-title="Hệ sinh thái Học tập FPT CMS Coursera">
           <div class="card__icon card__icon--coursera">🌐</div>
           <h3 class="card__title">Hệ sinh thái Học tập FPT</h3>
-          <p class="card__desc">Tổng quan CMS, Coursera, EduNext, Thư viện số, FLM — lộ trình thông thạo & mẹo từ sinh viên.</p>
+          <p class="card__desc">Tổng quan CMS, Coursera, EduNext, Thư viện số, FLM — lộ trình thông thạo & mẹo từ sinh
+            viên.</p>
           <div class="card__meta">
             <div class="card__tags">
               <span class="badge badge--info">Tổng hợp</span>
@@ -203,8 +243,24 @@
           </div>
         </a>
 
+        <!-- Clubs -->
+        <a href="pages/clubs.html" class="card" data-category="info" data-title="Câu lạc bộ CLB FPT University">
+          <div class="card__icon" style="background:rgba(168,85,247,0.12)">🎓</div>
+          <h3 class="card__title">Câu lạc bộ & Đời sống FPTU</h3>
+          <p class="card__desc">Khám phá 30+ CLB tại FPT — võ thuật, thể thao, lập trình, nghệ thuật và thông tin tuyển
+            sinh 2026.</p>
+          <div class="card__meta">
+            <div class="card__tags">
+              <span class="badge badge--brand">30+ CLB</span>
+              <span class="badge badge--info">Mới</span>
+            </div>
+            <div class="card__arrow">→</div>
+          </div>
+        </a>
+
         <!-- Quick Links -->
-        <div class="card" data-category="info" data-title="Liên kết Nhanh Quick Links" onclick="document.getElementById('quickLinksModal').style.display='flex'">
+        <div class="card" data-category="info" data-title="Liên kết Nhanh Quick Links"
+          onclick="document.getElementById('quickLinksModal').style.display='flex'">
           <div class="card__icon card__icon--about">🔗</div>
           <h3 class="card__title">Liên kết Nhanh</h3>
           <p class="card__desc">Truy cập nhanh tới FAP, FLM, EduNext và các trang web chính thức của trường.</p>
@@ -220,24 +276,43 @@
   </section>
 
   <!-- Quick Links Modal -->
-  <div id="quickLinksModal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:1.5rem;" onclick="if(event.target===this)this.style.display='none'">
-    <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:2rem;max-width:480px;width:100%;">
+  <div id="quickLinksModal"
+    style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:1.5rem;"
+    onclick="if(event.target===this)this.style.display='none'">
+    <div
+      style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:2rem;max-width:480px;width:100%;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
         <h2 style="font-size:1.25rem;font-weight:700;">🔗 Liên kết Nhanh</h2>
-        <button onclick="document.getElementById('quickLinksModal').style.display='none'" style="background:none;border:none;color:var(--text-muted);font-size:1.5rem;cursor:pointer;">✕</button>
+        <button onclick="document.getElementById('quickLinksModal').style.display='none'"
+          style="background:none;border:none;color:var(--text-muted);font-size:1.5rem;cursor:pointer;">✕</button>
       </div>
       <div style="display:flex;flex-direction:column;gap:0.75rem;">
-        <a href="https://fap.fpt.edu.vn/Thongbao.aspx" target="_blank" rel="noopener" class="guide__link" style="display:flex;justify-content:space-between;">
+        <a href="https://fap.fpt.edu.vn/Thongbao.aspx" target="_blank" rel="noopener" class="guide__link"
+          style="display:flex;justify-content:space-between;">
           <span>📊 FAP — Academic Portal</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
         </a>
-        <a href="https://flm.fpt.edu.vn/Login" target="_blank" rel="noopener" class="guide__link" style="display:flex;justify-content:space-between;">
+        <a href="https://flm.fpt.edu.vn/Login" target="_blank" rel="noopener" class="guide__link"
+          style="display:flex;justify-content:space-between;">
           <span>🗺️ FLM — Learning Management</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
         </a>
-        <a href="https://fu-edunext.fpt.edu.vn/home" target="_blank" rel="noopener" class="guide__link" style="display:flex;justify-content:space-between;">
+        <a href="https://fu-edunext.fpt.edu.vn/home" target="_blank" rel="noopener" class="guide__link"
+          style="display:flex;justify-content:space-between;">
           <span>💬 EduNext — E-Learning</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
         </a>
       </div>
     </div>
@@ -253,7 +328,8 @@
         </div>
         <span class="footer__text">© 2026 FPT Hub — Dự án dành cho sinh viên FPT University</span>
         <div class="footer__links">
-          <a href="https://www.facebook.com/share/1C9CGed15R/" target="_blank" rel="noopener" class="footer__link">Facebook</a>
+          <a href="https://www.facebook.com/share/1C9CGed15R/" target="_blank" rel="noopener"
+            class="footer__link">Facebook</a>
           <a href="pages/about.html" class="footer__link">Giới thiệu</a>
         </div>
       </div>
@@ -272,4 +348,5 @@
   <script src="js/auth.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>

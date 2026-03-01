@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu lạc bộ FPT — FPT Hub</title>
+    <meta name="description"
+        content="Tổng hợp thông tin các câu lạc bộ tại Đại học FPT - Võ thuật, Thể thao, Xã hội, Lập trình, Âm nhạc & Nghệ thuật.">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/logo-artboard.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .club-hero {
+            padding: 6rem 0 3rem;
+            text-align: center;
+            position: relative
+        }
+
+        .club-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 400px;
+            background: linear-gradient(180deg, rgba(148, 46, 0, 0.1) 0%, transparent 100%);
+            pointer-events: none
+        }
+
+        .club-hero__title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem
+        }
+
+        .club-hero__desc {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto 2rem
+        }
+
+        .fpt-info {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            margin-bottom: 3rem
+        }
+
+        .fpt-info__title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem
+        }
+
+        .fpt-info__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem
+        }
+
+        .fpt-info__card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem
+        }
+
+        .fpt-info__card h4 {
+            font-size: .9375rem;
+            font-weight: 700;
+            color: var(--brand-accent);
+            margin-bottom: .5rem
+        }
+
+        .fpt-info__card ul {
+            list-style: none;
+            padding: 0
+        }
+
+        .fpt-info__card li {
+            color: var(--text-secondary);
+            font-size: .875rem;
+            padding: .25rem 0;
+            padding-left: 1rem;
+            position: relative
+        }
+
+        .fpt-info__card li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--brand-accent)
+        }
+
+        .fpt-info__stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap
+        }
+
+        .fpt-info__stat {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+            padding: 1rem;
+            background: rgba(249, 115, 22, 0.06);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(249, 115, 22, 0.12)
+        }
+
+        .fpt-info__stat-num {
+            display: block;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--brand-accent)
+        }
+
+        .fpt-info__stat-label {
+            font-size: .8125rem;
+            color: var(--text-muted);
+            margin-top: .25rem
+        }
+
+        .club-category {
+            margin-bottom: 3rem
+        }
+
+        .club-category__header {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: .75rem;
+            border-bottom: 2px solid var(--brand-accent)
+        }
+
+        .club-category__icon {
+            font-size: 1.5rem
+        }
+
+        .club-category__title {
+            font-size: 1.375rem;
+            font-weight: 700
+        }
+
+        .club-category__count {
+            font-size: .8125rem;
+            color: var(--text-muted);
+            margin-left: auto
+        }
+
+        .club-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem
+        }
+
+        .club-card {
+            background: var(--gradient-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden
+        }
+
+        .club-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity var(--transition-base)
+        }
+
+        .club-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(249, 115, 22, 0.2);
+            box-shadow: var(--shadow-lg), 0 0 30px rgba(249, 115, 22, 0.06)
+        }
+
+        .club-card:hover::before {
+            opacity: 1
+        }
+
+        .club-card__name {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: .5rem;
+            position: relative
+        }
+
+        .club-card__desc {
+            color: var(--text-secondary);
+            font-size: .875rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            position: relative;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden
+        }
+
+        .club-card__link {
+            display: inline-flex;
+            align-items: center;
+            gap: .375rem;
+            color: var(--brand-accent);
+            font-size: .875rem;
+            font-weight: 600;
+            position: relative;
+            transition: color var(--transition-fast)
+        }
+
+        .club-card__link:hover {
+            color: var(--brand-accent-light)
+        }
+
+        .club-search {
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            position: relative
+        }
+
+        .club-search input {
+            width: 100%;
+            padding: .875rem 1.25rem .875rem 3rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            color: var(--text-primary);
+            font-size: .9375rem;
+            font-family: inherit;
+            transition: all var(--transition-fast)
+        }
+
+        .club-search input::placeholder {
+            color: var(--text-muted)
+        }
+
+        .club-search input:focus {
+            outline: none;
+            border-color: var(--brand-accent);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1)
+        }
+
+        .club-search svg {
+            position: absolute;
+            left: 1.125rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none
+        }
+
+        .club-filter {
+            display: flex;
+            justify-content: center;
+            gap: .5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap
+        }
+
+        .club-filter-btn {
+            padding: .5rem 1.25rem;
+            border-radius: var(--radius-full);
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-size: .875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-fast)
+        }
+
+        .club-filter-btn:hover {
+            border-color: var(--border-hover);
+            color: var(--text-primary)
+        }
+
+        .club-filter-btn.active {
+            background: var(--gradient-brand);
+            border-color: transparent;
+            color: white
+        }
+
+        @media(max-width:768px) {
+            .club-grid {
+                grid-template-columns: 1fr
+            }
+
+            .fpt-info__grid {
+                grid-template-columns: 1fr
+            }
+
+            .fpt-info__stats {
+                flex-direction: column
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar__inner">
+            <a href="../index.html" class="navbar__logo">
+                <img src="../assets/logo/logo-artboard.svg" alt="FPT Hub">
+                <span>FPT <span class="text-gradient">Hub</span></span>
+            </a>
+            <div class="navbar__links" id="navLinks">
+                <a href="../index.html" class="navbar__link">Trang chủ</a>
+                <a href="../index.html#resources" class="navbar__link">Tài liệu</a>
+                <a href="clubs.html" class="navbar__link navbar__link--active">CLB</a>
+                <a href="about.html" class="navbar__link">Giới thiệu</a>
+            </div>
+            <div class="navbar__actions">
+                <button class="navbar__toggle" id="navToggle" onclick="toggleNav()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="guide">
+        <div class="container">
+            <div class="club-hero">
+                <span class="badge badge--brand" style="margin-bottom:1rem;display:inline-flex">🎓 Đời sống sinh viên
+                    FPT 2026</span>
+                <h1 class="club-hero__title">Câu lạc bộ & <span class="text-gradient">Đời sống FPTU</span></h1>
+                <p class="club-hero__desc">Khám phá hơn 30 câu lạc bộ đa dạng tại Đại học FPT — từ võ thuật, thể thao
+                    đến lập trình và nghệ thuật.</p>
+            </div>
+
+            <!-- FPT University 2026 Info -->
+            <div class="fpt-info">
+                <h2 class="fpt-info__title">🏫 Đại học FPT — Tuyển sinh 2026</h2>
+                <p style="color:var(--text-secondary);margin-bottom:1.5rem">Năm 2026, Đại học FPT tuyển sinh 38 chuyên
+                    ngành, mở rộng mạnh vào AI, dữ liệu, truyền thông sáng tạo và kinh doanh số.</p>
+                <div class="fpt-info__grid">
+                    <div class="fpt-info__card">
+                        <h4>💻 Công nghệ thông tin</h4>
+                        <ul>
+                            <li>Công nghệ thông tin</li>
+                            <li>Kỹ thuật phần mềm</li>
+                            <li>Trí tuệ nhân tạo</li>
+                            <li>Khoa học dữ liệu ứng dụng</li>
+                            <li>An toàn thông tin</li>
+                            <li>Vi mạch bán dẫn</li>
+                            <li>Công nghệ ô tô số</li>
+                            <li>Hệ thống thông tin</li>
+                            <li>Thiết kế đồ họa & mỹ thuật số</li>
+                        </ul>
+                    </div>
+                    <div class="fpt-info__card">
+                        <h4>📢 Truyền thông & Ngôn ngữ</h4>
+                        <ul>
+                            <li>Truyền thông đa phương tiện</li>
+                            <li>Quan hệ công chúng</li>
+                            <li>Truyền thông Marketing tích hợp</li>
+                            <li>Truyền thông thương hiệu</li>
+                            <li>Ngôn ngữ Anh</li>
+                            <li>Ngôn ngữ Hàn Quốc</li>
+                            <li>Ngôn ngữ Trung Quốc</li>
+                        </ul>
+                    </div>
+                    <div class="fpt-info__card">
+                        <h4>📊 Quản trị kinh doanh</h4>
+                        <ul>
+                            <li>Marketing</li>
+                            <li>Kinh doanh quốc tế</li>
+                            <li>Thương mại điện tử</li>
+                            <li>Quản trị kinh doanh</li>
+                            <li>Quản trị giải trí & sự kiện</li>
+                            <li>Phân tích kinh doanh</li>
+                            <li>Logistics & chuỗi cung ứng</li>
+                            <li>Công nghệ tài chính (FinTech)</li>
+                            <li>Quản trị khách sạn</li>
+                        </ul>
+                    </div>
+                    <div class="fpt-info__card">
+                        <h4>⚖️ Luật & Tài chính</h4>
+                        <ul>
+                            <li>Luật</li>
+                            <li>Luật kinh tế</li>
+                            <li>Tài chính doanh nghiệp</li>
+                            <li>Tài chính thông minh</li>
+                            <li>Tài chính ngân hàng</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fpt-info__stats">
+                    <div class="fpt-info__stat"><span class="fpt-info__stat-num">38</span><span
+                            class="fpt-info__stat-label">Chuyên ngành</span></div>
+                    <div class="fpt-info__stat"><span class="fpt-info__stat-num">3</span><span
+                            class="fpt-info__stat-label">Phương thức tuyển sinh</span></div>
+                    <div class="fpt-info__stat"><span class="fpt-info__stat-num">5</span><span
+                            class="fpt-info__stat-label">Cơ sở toàn quốc</span></div>
+                    <div class="fpt-info__stat"><span class="fpt-info__stat-num">30+</span><span
+                            class="fpt-info__stat-label">Câu lạc bộ</span></div>
+                </div>
+            </div>
+
+            <!-- Search & Filter -->
+            <div class="club-search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                <input type="text" placeholder="Tìm câu lạc bộ..." id="clubSearch" oninput="filterClubs()">
+            </div>
+            <div class="club-filter" id="clubFilter">
+                <button class="club-filter-btn active" onclick="filterCategory('all',this)">Tất cả</button>
+                <button class="club-filter-btn" onclick="filterCategory('martial',this)">🥊 Võ thuật</button>
+                <button class="club-filter-btn" onclick="filterCategory('sports',this)">⚽ Thể thao</button>
+                <button class="club-filter-btn" onclick="filterCategory('social',this)">🌍 Xã hội</button>
+                <button class="club-filter-btn" onclick="filterCategory('tech',this)">💻 Lập trình</button>
+                <button class="club-filter-btn" onclick="filterCategory('art',this)">🎵 Nghệ thuật</button>
+            </div>
+
+            <!-- Võ Thuật -->
+            <div class="club-category" data-cat="martial">
+                <div class="club-category__header"><span class="club-category__icon">🥊</span>
+                    <h2 class="club-category__title">CLB Võ Thuật</h2><span class="club-category__count">4 CLB</span>
+                </div>
+                <div class="club-grid">
+                    <div class="club-card" data-name="Vovinam">
+                        <h3 class="club-card__name">Vovinam (FVC)</h3>
+                        <p class="club-card__desc">CLB võ thuật lâu đời nhất trường, thành lập 6/6/2009. Với tinh thần
+                            "Pain is temporary — Glory lasts forever", FVC là nơi rèn luyện võ đạo và nhiệt huyết tuổi
+                            trẻ.</p><a href="https://www.facebook.com/fvchn/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="Taekwondo">
+                        <h3 class="club-card__name">Taekwondo</h3>
+                        <p class="club-card__desc">Tìm hiểu võ thuật, xả năng lượng tiêu cực, giảm stress hiệu quả. Tham
+                            gia thi thăng đai đẳng, thi đấu trong tỉnh và quốc gia.</p><a
+                            href="https://www.facebook.com/FPT.Psy/" target="_blank" class="club-card__link">Facebook
+                            →</a>
+                    </div>
+                    <div class="club-card" data-name="Muay Thai">
+                        <h3 class="club-card__name">Muay Thai</h3>
+                        <p class="club-card__desc">CLB Muay Thái FPTU (FMUC) — nơi rèn luyện sức mạnh, kỹ năng tự vệ và
+                            tinh thần chiến đấu cho sinh viên.</p><a href="https://www.facebook.com/fmuc.fptu/"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="Kickfit">
+                        <h3 class="club-card__name">Kickfit</h3>
+                        <p class="club-card__desc">Kết hợp giữa boxing và fitness, Kickfit giúp bạn rèn luyện sức khỏe
+                            toàn diện trong môi trường năng động.</p><a href="https://www.facebook.com/nunchaku.fnc/"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thể thao -->
+            <div class="club-category" data-cat="sports">
+                <div class="club-category__header"><span class="club-category__icon">⚽</span>
+                    <h2 class="club-category__title">CLB Thể Thao</h2><span class="club-category__count">10 CLB</span>
+                </div>
+                <div class="club-grid">
+                    <div class="club-card" data-name="FPT Basketball Club">
+                        <h3 class="club-card__name">FPT Basketball Club</h3>
+                        <p class="club-card__desc">Sân chơi bóng rổ dành cho sinh viên đam mê thể thao, với các giải đấu
+                            nội bộ và giao hữu giữa các trường.</p><a href="https://www.facebook.com/FPTBasketballClub"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="FPT Football Club">
+                        <h3 class="club-card__name">FPT Football Club</h3>
+                        <p class="club-card__desc">CLB bóng đá với đông đảo thành viên, tạo sân chơi cho những người đam
+                            mê môn thể thao vua, như mái nhà thứ 2 giúp rèn luyện sức khỏe.</p><a
+                            href="https://www.facebook.com/fu.football.team" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="FPTU Badminton">
+                        <h3 class="club-card__name">FPTU Badminton</h3>
+                        <p class="club-card__desc">CLB cầu lông FPTU — nơi sinh viên giao lưu, rèn luyện và tham gia các
+                            giải đấu cầu lông.</p><a href="https://www.facebook.com/FPTUbadminton/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="Street Workout Club">
+                        <h3 class="club-card__name">Street Workout Club</h3>
+                        <p class="club-card__desc">Không bó buộc phòng tập, chỉ với thanh xà đơn và xà kép. FU Street
+                            Workout tập trung Calisthenics tại KTX Hòa Lạc.</p><a
+                            href="https://www.facebook.com/FuStreetWorkout" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="Gym Club">
+                        <h3 class="club-card__name">Gym Club</h3>
+                        <p class="club-card__desc">CLB thể hình dành cho sinh viên yêu thích rèn luyện sức khỏe và phát
+                            triển thể chất.</p><a href="https://www.facebook.com/FuStreetWorkout" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="FPTU Esport Club">
+                        <h3 class="club-card__name">FPTU Esport Club</h3>
+                        <p class="club-card__desc">Sân chơi cho game thủ FPTU, tổ chức giải đấu esports nội bộ và đại
+                            diện trường tham gia giải liên trường.</p><a href="https://www.facebook.com/ESCFUHL"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="FPTU ISkate">
+                        <h3 class="club-card__name">FPTU ISkate</h3>
+                        <p class="club-card__desc">Đại gia đình những bạn trẻ đam mê trượt ván, ISC mang nhiệt huyết
+                            tuổi trẻ với bộ môn skateboard.</p><a href="https://www.facebook.com/FPTUISkate/"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="FPT Volleyball Club">
+                        <h3 class="club-card__name">FPT Volleyball Club</h3>
+                        <p class="club-card__desc">CLB bóng chuyền FPTU — kết nối sinh viên yêu thích bóng chuyền qua
+                            các buổi tập và giải đấu.</p><a href="https://www.facebook.com/FptVolleyballClub/"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="CLB Cờ Vây">
+                        <h3 class="club-card__name">CLB Cờ Vây</h3>
+                        <p class="club-card__desc">Nơi rèn luyện tư duy chiến lược qua bộ môn cờ vây dành cho sinh viên
+                            yêu thích boardgame trí tuệ.</p><a href="https://www.facebook.com/fptgoclub/"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="CLB Côn Nhị Khúc">
+                        <h3 class="club-card__name">CLB Côn Nhị Khúc (FNC)</h3>
+                        <p class="club-card__desc">Đến với FNC, bạn có được vũ khí tự vệ, sức khỏe dẻo dai, khả năng tập
+                            trung và gia đình không "rùa".</p><a href="https://www.facebook.com/nunchaku.fnc/"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Xã hội -->
+            <div class="club-category" data-cat="social">
+                <div class="club-category__header"><span class="club-category__icon">🌍</span>
+                    <h2 class="club-category__title">CLB Xã Hội</h2><span class="club-category__count">11 CLB</span>
+                </div>
+                <div class="club-grid">
+                    <div class="club-card" data-name="UNICAMP">
+                        <h3 class="club-card__name">UNICAMP</h3>
+                        <p class="club-card__desc">Trại hè dành cho học sinh THPT trải nghiệm, học tập, sinh hoạt trong
+                            KTX như sinh viên đại học.</p><a href="https://www.facebook.com/FU.Business/"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="FU Business">
+                        <h3 class="club-card__name">FU Business</h3>
+                        <p class="club-card__desc">Môi trường cho sinh viên yêu thích kinh doanh giao lưu, học hỏi kinh
+                            nghiệm và phát triển bản thân.</p><a href="https://www.facebook.com/FU.Business/"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="iGo">
+                        <h3 class="club-card__name">iGo</h3>
+                        <p class="club-card__desc">Tổ chức tình nguyện vì cộng đồng, góp sức trẻ giúp những người bất
+                            hạnh có thêm giây phút ấm áp.</p><a href="https://www.facebook.com/iGoClub/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="CLB Tiếng Trung">
+                        <h3 class="club-card__name">CLB Tiếng Trung (FCC)</h3>
+                        <p class="club-card__desc">Trau dồi kiến thức tiếng Trung, kỹ năng truyền thông và thoải mái thể
+                            hiện bản thân ở nhiều lĩnh vực.</p><a href="https://www.facebook.com/tiengtrungFPT/"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="No Shy Club">
+                        <h3 class="club-card__name">No Shy Club</h3>
+                        <p class="club-card__desc">Giao lưu rèn luyện tiếng Anh, thực hành kỹ năng mềm. Nơi mọi cá tính
+                            được chào đón không ngại ngần.</p><a href="https://www.facebook.com/noshyclub/"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="Book Club">
+                        <h3 class="club-card__name">Book Club</h3>
+                        <p class="club-card__desc">Dành cho bạn trẻ yêu thích sách, văn hoá, tri thức, nghệ thuật sống.
+                        </p><a href="https://www.facebook.com/fu.bukclub/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="English Club">
+                        <h3 class="club-card__name">English Club (FEC)</h3>
+                        <p class="club-card__desc">Cộng đồng đam mê tiếng Anh, biến tiếng Anh thành lợi thế cạnh tranh
+                            trong tương lai.</p><a href="https://www.facebook.com/englishclub.fu/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="Debate Club">
+                        <h3 class="club-card__name">Debate Club (FDC)</h3>
+                        <p class="club-card__desc">Nơi bạn sẵn sàng nói lên quan điểm và phản biện mà không bị phán xét
+                            về mọi vấn đề xã hội.</p><a href="https://www.facebook.com/FUDebateClub/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="CLB Tâm Lý Học">
+                        <h3 class="club-card__name">CLB Tâm Lý Học</h3>
+                        <p class="club-card__desc">Tìm hiểu, khám phá bản thân, giải mã bí ẩn đằng sau hành vi, cảm xúc
+                            và lời nói.</p><a href="https://www.facebook.com/FPT.Psy/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="Dango Club">
+                        <h3 class="club-card__name">Dango Club</h3>
+                        <p class="club-card__desc">CLB văn hóa Nhật Bản — manga, anime, cosplay. Nơi giao lưu cho fan xứ
+                            sở Phù Tang.</p><a href="https://www.facebook.com/groups/dango.clb/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="CLB Mây Mưa">
+                        <h3 class="club-card__name">CLB Mây Mưa</h3>
+                        <p class="club-card__desc">Sân chơi cho những ai yêu thích đất nước, con người và nền văn hóa
+                            Nhật Bản — ẩm thực, nghệ thuật, phong tục.</p><a href="https://www.facebook.com/maymuaclub/"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lập trình -->
+            <div class="club-category" data-cat="tech">
+                <div class="club-category__header"><span class="club-category__icon">💻</span>
+                    <h2 class="club-category__title">CLB Lập Trình</h2><span class="club-category__count">4 CLB</span>
+                </div>
+                <div class="club-grid">
+                    <div class="club-card" data-name="AI Club">
+                        <h3 class="club-card__name">AI Club</h3>
+                        <p class="club-card__desc">CLB trí tuệ nhân tạo đầu tiên của FPTU — thúc đẩy nghiên cứu và ứng
+                            dụng AI vào thực tế.</p><a href="https://www.facebook.com/aiclub.fptu/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="Japanese Software Club">
+                        <h3 class="club-card__name">JS Club</h3>
+                        <p class="club-card__desc">CLB Kỹ sư phần mềm Nhật Bản — nơi hội tụ đam mê tiếng Nhật và lập
+                            trình.</p><a href="https://www.facebook.com/fu.jsclub" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="F-Code">
+                        <h3 class="club-card__name">F-Code</h3>
+                        <p class="club-card__desc">CLB lập trình F-Code — nơi sinh viên IT rèn luyện kỹ năng coding,
+                            thuật toán và tham gia hackathon.</p><a href="https://www.facebook.com/fcodefpt/"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="Ethical Hacker Club">
+                        <h3 class="club-card__name">Ethical Hacker Club</h3>
+                        <p class="club-card__desc">CLB an ninh mạng — học hỏi kỹ năng bảo mật, hacking đạo đức và tham
+                            gia CTF competitions.</p><a href="https://www.facebook.com/fcodefpt/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Âm nhạc & Nghệ thuật -->
+            <div class="club-category" data-cat="art">
+                <div class="club-category__header"><span class="club-category__icon">🎵</span>
+                    <h2 class="club-category__title">CLB Âm Nhạc & Nghệ Thuật</h2><span class="club-category__count">9
+                        CLB</span>
+                </div>
+                <div class="club-grid">
+                    <div class="club-card" data-name="Soleil Crew FPTU">
+                        <h3 class="club-card__name">Soleil Crew FPTU</h3>
+                        <p class="club-card__desc">Nhóm nhảy đa phong cách, thành lập 2016. Luôn nhiệt tình, trẻ trung
+                            và phá cách.</p><a href="https://www.facebook.com/soleilcrewfptu/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="Guitar Club">
+                        <h3 class="club-card__name">Guitar Club (FGC)</h3>
+                        <p class="club-card__desc">Nơi giai điệu guitar đủ làm bạn say đắm — học hỏi, đoàn kết và nhiệt
+                            huyết.</p><a href="https://www.facebook.com/fuguitarclub/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="CLB Nhạc cụ truyền thống">
+                        <h3 class="club-card__name">CLB Nhạc cụ truyền thống</h3>
+                        <p class="club-card__desc">Gìn giữ và phát triển các nhạc cụ dân tộc truyền thống Việt Nam tại
+                            FPTU.</p><a href="https://www.facebook.com/FTIC.FUHL" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="Melody">
+                        <h3 class="club-card__name">Melody</h3>
+                        <p class="club-card__desc">CLB Âm Nhạc — mái nhà yêu thương, chia sẻ nỗi buồn, niềm vui qua câu
+                            hát. Ngập tràn tiếng cười.</p><a href="https://www.facebook.com/FptuMelodyClub"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="FPT Hiphop Club">
+                        <h3 class="club-card__name">FPT Hiphop Club (HFU)</h3>
+                        <p class="club-card__desc">Breaking, Popping, Hiphop Dance, Locking — Hiphop không chỉ là bước
+                            nhảy, mà là văn hóa sống.</p><a href="https://www.facebook.com/hiphopfptuniversity"
+                            target="_blank" class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="Photography Club">
+                        <h3 class="club-card__name">Photography Club</h3>
+                        <p class="club-card__desc">CLB nhiếp ảnh FPTU — nắm bắt khoảnh khắc đẹp trong đời sống sinh
+                            viên.</p><a href="https://www.facebook.com/FUphotography.club" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="CLB Điện Ảnh">
+                        <h3 class="club-card__name">CLB Điện Ảnh</h3>
+                        <p class="club-card__desc">Cho người yêu phim muốn sáng tạo trong lĩnh vực điện ảnh, quay dựng
+                            phim tài liệu FPTU.</p><a href="https://www.facebook.com/fucinemastudio/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="HebeFPT">
+                        <h3 class="club-card__name">HebeFPT</h3>
+                        <p class="club-card__desc">CLB múa đầu tiên và duy nhất tại FPTU — training đa thể loại, biểu
+                            diễn sân khấu lớn.</p><a href="https://www.facebook.com/HebeFPT/" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                    <div class="club-card" data-name="FU Designers">
+                        <h3 class="club-card__name">FU Designers</h3>
+                        <p class="club-card__desc">CLB thiết kế sáng tạo — graphic design, UI/UX, branding cho sinh viên
+                            FPTU.</p><a href="https://www.facebook.com/fudesigners" target="_blank"
+                            class="club-card__link">Facebook →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__logo"><img src="../assets/logo/logo-artboard.svg" alt="FPT Hub"><span>FPT Hub</span>
+                </div>
+                <span class="footer__text">© 2026 FPT Hub — Dự án dành cho sinh viên FPT University</span>
+                <div class="footer__links">
+                    <a href="https://www.facebook.com/share/1C9CGed15R/" target="_blank" rel="noopener"
+                        class="footer__link">Facebook</a>
+                    <a href="about.html" class="footer__link">Giới thiệu</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNav() { document.getElementById('navLinks').classList.toggle('navbar__links--open') }
+        function filterClubs() {
+            const q = document.getElementById('clubSearch').value.toLowerCase();
+            document.querySelectorAll('.club-card').forEach(c => {
+                c.style.display = c.getAttribute('data-name').toLowerCase().includes(q) || c.textContent.toLowerCase().includes(q) ? '' : 'none';
+            });
+        }
+        function filterCategory(cat, btn) {
+            document.querySelectorAll('.club-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.club-category').forEach(c => {
+                c.style.display = cat === 'all' || c.getAttribute('data-cat') === cat ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+
+</html>
