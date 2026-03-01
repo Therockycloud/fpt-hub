@@ -258,6 +258,11 @@ img {
   border-radius: var(--radius-sm);
 }
 
+/* --- Auth-only elements (hidden by default, shown by JS when logged in) --- */
+.auth-only {
+  display: none;
+}
+
 /* --- Navigation --- */
 .navbar {
   position: fixed;

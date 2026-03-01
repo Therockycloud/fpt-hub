@@ -207,6 +207,9 @@ function initAuth() {
                 updateUI(null);
             }
         });
+    } else {
+        // Firebase not configured — ensure logged-out UI
+        updateUI(null);
     }
 }
 
