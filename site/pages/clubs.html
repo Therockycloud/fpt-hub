@@ -324,6 +324,10 @@
                 <a href="about.html" class="navbar__link">Giới thiệu</a>
             </div>
             <div class="navbar__actions">
+                <button class="btn btn--ghost btn--icon" onclick="toggleTheme()" title="Chuyển theme"
+                    style="font-size:1.25rem;">
+                    <span class="theme-toggle__icon">🌙</span>
+                </button>
                 <button class="navbar__toggle" id="navToggle" onclick="toggleNav()">
                     <span></span><span></span><span></span>
                 </button>
@@ -722,6 +726,7 @@
         </div>
     </footer>
 
+    <script src="../js/theme.js"></script>
     <script>
         function toggleNav() { document.getElementById('navLinks').classList.toggle('navbar__links--open') }
         function filterClubs() {

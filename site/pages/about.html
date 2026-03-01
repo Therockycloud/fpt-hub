@@ -20,6 +20,8 @@
                 <a href="about.html" class="navbar__link navbar__link--active">Giới thiệu</a>
             </div>
             <div class="navbar__actions">
+                <button class="btn btn--ghost btn--icon" onclick="toggleTheme()" title="Chuyển theme"
+                    style="font-size:1.25rem;"><span class="theme-toggle__icon">🌙</span></button>
                 <div id="authBtnWrap"><button class="btn btn--primary" onclick="handleLogin()" id="loginBtn">Đăng
                         nhập</button></div>
                 <div id="userWrap" class="navbar__user" style="display:none;"><img id="userAvatar"
@@ -148,6 +150,7 @@
             </div>
         </div>
     </footer>
+    <script src="../js/theme.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
     <script src="../js/auth.js"></script>
