@@ -77,9 +77,9 @@ window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(15, 15, 17, 0.95)';
+        navbar.classList.add('navbar--scrolled');
     } else {
-        navbar.style.background = 'rgba(15, 15, 17, 0.8)';
+        navbar.classList.remove('navbar--scrolled');
     }
 });
 
