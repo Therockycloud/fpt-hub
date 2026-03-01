@@ -27,9 +27,9 @@
       </a>
       <div class="navbar__links" id="navLinks">
         <a href="index.html" class="navbar__link navbar__link--active">Trang chủ</a>
-        <a href="#resources" class="navbar__link" id="navResources">Tài liệu</a>
-        <a href="pages/clubs.html" class="navbar__link">CLB</a>
         <a href="pages/about.html" class="navbar__link">Giới thiệu</a>
+        <a href="pages/clubs.html" class="navbar__link">CLB</a>
+        <a href="#resources" class="navbar__link auth-only" id="navResources">Tài liệu</a>
       </div>
       <div class="navbar__actions">
         <button class="btn btn--ghost btn--icon" onclick="toggleTheme()" title="Chuyển theme"
@@ -125,18 +125,19 @@
   </section>
 
   <!-- Resource Directory Section -->
-  <section class="section" id="resources">
+  <section id="resources" class="resources">
     <div class="container">
-      <div class="section__header">
-        <h2 class="section__title">📚 Thư viện Tài liệu</h2>
-        <p class="section__desc">Hướng dẫn chi tiết từng hệ thống trường với ảnh chụp và mẹo từ sinh viên.</p>
+      <div class="section-header auth-only">
+        <span class="badge badge--accent">📚 Tài liệu hướng dẫn</span>
+        <h2 class="section-title">Khám phá tài liệu</h2>
+        <p class="section-subtitle">Tất cả những gì bạn cần để bắt đầu tại FPT University</p>
       </div>
 
       <!-- Search -->
-      <div class="search-bar">
-        <div class="search-bar__wrapper">
+      <div class="search-bar auth-only" id="searchBar">
+        <div class="search-bar__inner">
           <svg class="search-bar__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            stroke-width="2">
             <circle cx="11" cy="11" r="8" />
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
           </svg>
@@ -146,7 +147,7 @@
       </div>
 
       <!-- Filter Tabs -->
-      <div class="filter-tabs" id="filterTabs">
+      <div class="filter-tabs auth-only" id="filterTabs">
         <button class="filter-tab filter-tab--active" data-filter="all" onclick="setFilter('all', this)">Tất cả</button>
         <button class="filter-tab" data-filter="academic" onclick="setFilter('academic', this)">Học vụ</button>
         <button class="filter-tab" data-filter="learning" onclick="setFilter('learning', this)">Học tập</button>
@@ -157,7 +158,8 @@
       <!-- Cards Grid -->
       <div class="card-grid" id="cardGrid">
         <!-- FAP - Grades & Registration -->
-        <a href="pages/fap-grades.html" class="card" data-category="academic" data-title="FAP Bảng điểm & Đăng ký">
+        <a href="pages/fap-grades.html" class="card auth-only" data-category="academic"
+          data-title="FAP Bảng điểm & Đăng ký">
           <div class="card__icon card__icon--fap">📊</div>
           <h3 class="card__title">FAP — Bảng điểm & Đăng ký</h3>
           <p class="card__desc">Hướng dẫn xem bảng điểm, khung chương trình, đăng ký môn học, chuyển lớp và các thủ tục
@@ -172,7 +174,8 @@
         </a>
 
         <!-- FAP - Login & Payment -->
-        <a href="pages/fap-basics.html" class="card" data-category="academic" data-title="FAP Đăng nhập & Thanh toán">
+        <a href="pages/fap-basics.html" class="card auth-only" data-category="academic"
+          data-title="FAP Đăng nhập & Thanh toán">
           <div class="card__icon card__icon--fap">🔑</div>
           <h3 class="card__title">FAP — Đăng nhập & Thanh toán</h3>
           <p class="card__desc">Cách đăng nhập hệ thống, thanh toán học phí, xem thời khóa biểu, điểm danh và thủ tục
@@ -187,7 +190,7 @@
         </a>
 
         <!-- FAP - Exams -->
-        <a href="pages/fap-exams.html" class="card" data-category="exam" data-title="FAP SEB EOS Thi cử">
+        <a href="pages/fap-exams.html" class="card auth-only" data-category="exam" data-title="FAP SEB EOS Thi cử">
           <div class="card__icon card__icon--seb">📝</div>
           <h3 class="card__title">FAP — Thi cử (SEB/EOS)</h3>
           <p class="card__desc">Hướng dẫn cài đặt SEB, EOS Client, quy chế thi, xử lý lỗi phần mềm thi và phúc khảo bài
@@ -202,7 +205,8 @@
         </a>
 
         <!-- EduNext -->
-        <a href="pages/edunext.html" class="card" data-category="learning" data-title="EduNext Thảo luận Nhóm">
+        <a href="pages/edunext.html" class="card auth-only" data-category="learning"
+          data-title="EduNext Thảo luận Nhóm">
           <div class="card__icon card__icon--edunext">💬</div>
           <h3 class="card__title">EduNext — Thảo luận & Nhóm</h3>
           <p class="card__desc">Đăng nhập, tham gia slot học, thảo luận nhóm, nộp bài, chấm điểm chéo và đánh giá trên
@@ -217,7 +221,8 @@
         </a>
 
         <!-- FLM -->
-        <a href="pages/flm.html" class="card" data-category="learning" data-title="FLM Quản lý Chương trình học">
+        <a href="pages/flm.html" class="card auth-only" data-category="learning"
+          data-title="FLM Quản lý Chương trình học">
           <div class="card__icon card__icon--flm">🗺️</div>
           <h3 class="card__title">FLM — Chương trình đào tạo</h3>
           <p class="card__desc">Xem đề cương môn học, trọng số điểm, điều kiện tiên quyết, danh sách giáo trình trên
@@ -232,7 +237,7 @@
         </a>
 
         <!-- Learning Ecosystem Overview -->
-        <a href="pages/ecosystem.html" class="card" data-category="info"
+        <a href="pages/ecosystem.html" class="card auth-only" data-category="info"
           data-title="Hệ sinh thái Học tập FPT CMS Coursera">
           <div class="card__icon card__icon--coursera">🌐</div>
           <h3 class="card__title">Hệ sinh thái Học tập FPT</h3>
@@ -263,7 +268,7 @@
         </a>
 
         <!-- Quick Links -->
-        <div class="card" data-category="info" data-title="Liên kết Nhanh Quick Links"
+        <div class="card auth-only" data-category="info" data-title="Liên kết Nhanh Quick Links"
           onclick="document.getElementById('quickLinksModal').style.display='flex'">
           <div class="card__icon card__icon--about">🔗</div>
           <h3 class="card__title">Liên kết Nhanh</h3>

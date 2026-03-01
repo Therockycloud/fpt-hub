@@ -135,6 +135,8 @@ function updateUI(user) {
                 userAvatar.alt = user.displayName;
             }
         }
+        // Show auth-only elements
+        document.querySelectorAll('.auth-only').forEach(el => el.style.display = '');
     } else {
         // Logged out
         if (authBtnWrap) authBtnWrap.style.display = 'block';
@@ -143,6 +145,8 @@ function updateUI(user) {
             heroLoginBtn.onclick = handleLogin;
         }
         if (userWrap) userWrap.style.display = 'none';
+        // Hide auth-only elements
+        document.querySelectorAll('.auth-only').forEach(el => el.style.display = 'none');
     }
 }
 
