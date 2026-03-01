@@ -125,95 +125,85 @@
   </section>
 
   <!-- About Section — always visible -->
-  <section class="resources" id="aboutSection">
+  <section class="resources home-section" id="aboutSection">
     <div class="container">
-      <div class="section__header">
+      <div class="section__header home-section__header">
         <h2 class="section__title">🎯 Giới thiệu FPT Hub</h2>
         <p class="section__desc">FPT Hub ra đời từ một nhu cầu thực tế: sinh viên năm nhất không biết phải bắt đầu từ
           đâu khi tiếp xúc với hệ thống FAP, FLM, EduNext và hàng loạt nền tảng của trường.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:2rem;">
-        <div
-          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;">
-          <div style="font-size:2rem;margin-bottom:0.5rem;">📸</div>
-          <h4 style="margin-bottom:0.5rem;">Ảnh chụp thực tế</h4>
-          <p style="color:var(--text-secondary);font-size:0.875rem;">Mỗi bước hướng dẫn đều kèm ảnh chụp màn hình thực
+      <div class="home-section__grid">
+        <div class="home-feature-card">
+          <div class="home-feature-card__icon">📸</div>
+          <h4 class="home-feature-card__title">Ảnh chụp thực tế</h4>
+          <p class="home-feature-card__desc">Mỗi bước hướng dẫn đều kèm ảnh chụp màn hình thực
             tế từ hệ thống trường.</p>
         </div>
-        <div
-          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;">
-          <div style="font-size:2rem;margin-bottom:0.5rem;">💡</div>
-          <h4 style="margin-bottom:0.5rem;">Mẹo từ sinh viên</h4>
-          <p style="color:var(--text-secondary);font-size:0.875rem;">Kinh nghiệm thực chiến từ các anh chị khóa trước,
+        <div class="home-feature-card">
+          <div class="home-feature-card__icon">💡</div>
+          <h4 class="home-feature-card__title">Mẹo từ sinh viên</h4>
+          <p class="home-feature-card__desc">Kinh nghiệm thực chiến từ các anh chị khóa trước,
             không chỉ lý thuyết suông.</p>
         </div>
-        <div
-          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;">
-          <div style="font-size:2rem;margin-bottom:0.5rem;">🔍</div>
-          <h4 style="margin-bottom:0.5rem;">Tìm kiếm nhanh</h4>
-          <p style="color:var(--text-secondary);font-size:0.875rem;">Tìm tài liệu theo từ khóa hoặc lọc theo danh mục:
+        <div class="home-feature-card">
+          <div class="home-feature-card__icon">🔍</div>
+          <h4 class="home-feature-card__title">Tìm kiếm nhanh</h4>
+          <p class="home-feature-card__desc">Tìm tài liệu theo từ khóa hoặc lọc theo danh mục:
             học vụ, học tập, thi cử.</p>
         </div>
-        <div
-          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;">
-          <div style="font-size:2rem;margin-bottom:0.5rem;">🔒</div>
-          <h4 style="margin-bottom:0.5rem;">Dành riêng cho FPT</h4>
-          <p style="color:var(--text-secondary);font-size:0.875rem;">Xác thực qua email @fpt.edu.vn, đảm bảo chỉ sinh
+        <div class="home-feature-card">
+          <div class="home-feature-card__icon">🔒</div>
+          <h4 class="home-feature-card__title">Dành riêng cho FPT</h4>
+          <p class="home-feature-card__desc">Xác thực qua email @fpt.edu.vn, đảm bảo chỉ sinh
             viên FPT truy cập tài liệu.</p>
         </div>
       </div>
-      <div style="text-align:center;margin-top:2rem;">
-        <a href="pages/about.html" class="btn btn--primary"
-          style="display:inline-flex;align-items:center;gap:0.5rem;">Xem thêm về FPT Hub →</a>
+      <div class="home-section__cta">
+        <a href="pages/about.html" class="btn btn--primary home-section__cta-link">Xem thêm về FPT Hub →</a>
       </div>
     </div>
   </section>
 
   <!-- CLB Section — always visible -->
-  <section class="resources" id="clubSection">
+  <section class="resources home-section" id="clubSection">
     <div class="container">
-      <div class="section__header">
+      <div class="section__header home-section__header">
         <h2 class="section__title">🎓 Câu lạc bộ & Đời sống FPTU</h2>
         <p class="section__desc">Khám phá 30+ CLB đa dạng tại Đại học FPT — từ võ thuật, thể thao đến lập trình và nghệ
           thuật. Tuyển sinh 2026 đang mở.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:2rem;">
-        <div
-          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;text-align:center;">
-          <div style="font-size:2rem;margin-bottom:0.5rem;">⚽</div>
-          <h4>Thể thao</h4>
-          <p style="color:var(--text-secondary);font-size:0.875rem;">Bóng đá, bóng rổ, cầu lông, bơi lội...</p>
+      <div class="home-section__grid">
+        <div class="home-feature-card home-feature-card--center">
+          <div class="home-feature-card__icon">⚽</div>
+          <h4 class="home-feature-card__title">Thể thao</h4>
+          <p class="home-feature-card__desc">Bóng đá, bóng rổ, cầu lông, bơi lội...</p>
         </div>
-        <div
-          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;text-align:center;">
-          <div style="font-size:2rem;margin-bottom:0.5rem;">💻</div>
-          <h4>Lập trình</h4>
-          <p style="color:var(--text-secondary);font-size:0.875rem;">AI, Web Dev, Competitive Programming...</p>
+        <div class="home-feature-card home-feature-card--center">
+          <div class="home-feature-card__icon">💻</div>
+          <h4 class="home-feature-card__title">Lập trình</h4>
+          <p class="home-feature-card__desc">AI, Web Dev, Competitive Programming...</p>
         </div>
-        <div
-          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;text-align:center;">
-          <div style="font-size:2rem;margin-bottom:0.5rem;">🎨</div>
-          <h4>Nghệ thuật</h4>
-          <p style="color:var(--text-secondary);font-size:0.875rem;">Nhiếp ảnh, thiết kế, âm nhạc, kịch...</p>
+        <div class="home-feature-card home-feature-card--center">
+          <div class="home-feature-card__icon">🎨</div>
+          <h4 class="home-feature-card__title">Nghệ thuật</h4>
+          <p class="home-feature-card__desc">Nhiếp ảnh, thiết kế, âm nhạc, kịch...</p>
         </div>
-        <div
-          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;text-align:center;">
-          <div style="font-size:2rem;margin-bottom:0.5rem;">🥋</div>
-          <h4>Võ thuật</h4>
-          <p style="color:var(--text-secondary);font-size:0.875rem;">Taekwondo, Karate, Boxing, Vovinam...</p>
+        <div class="home-feature-card home-feature-card--center">
+          <div class="home-feature-card__icon">🥋</div>
+          <h4 class="home-feature-card__title">Võ thuật</h4>
+          <p class="home-feature-card__desc">Taekwondo, Karate, Boxing, Vovinam...</p>
         </div>
       </div>
-      <div style="text-align:center;margin-top:2rem;">
-        <a href="pages/clubs.html" class="btn btn--primary"
-          style="display:inline-flex;align-items:center;gap:0.5rem;">Khám phá tất cả CLB →</a>
+      <div class="home-section__cta">
+        <a href="pages/clubs.html" class="btn btn--primary home-section__cta-link">Khám phá tất cả CLB →</a>
       </div>
     </div>
   </section>
 
   <!-- Resource Directory Section (auth-only) -->
-  <section id="resources" class="resources auth-only">
+  <section id="resources" class="resources auth-only home-section">
     <div class="container">
-      <div class="section-header auth-only">
+      <div class="section-header home-section__header auth-only">
         <span class="badge badge--accent">📚 Tài liệu hướng dẫn</span>
         <h2 class="section-title">Khám phá tài liệu</h2>
         <p class="section-subtitle">Tất cả những gì bạn cần để bắt đầu tại FPT University</p>

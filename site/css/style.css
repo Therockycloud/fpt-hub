@@ -52,6 +52,14 @@
   --space-2xl: 3rem;
   --space-3xl: 4rem;
 
+  /* Home page spacing */
+  --home-section-py: 3.5rem;
+  --home-section-py-mobile: 2.5rem;
+  --home-header-gap: 1rem;
+  --home-grid-gap: 1.25rem;
+  --home-block-gap: 2rem;
+  --home-transition-gap: 1rem;
+
   /* Border Radius */
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
@@ -546,6 +554,72 @@ body.is-authenticated .auth-only {
   color: var(--text-secondary);
   max-width: 500px;
   margin: 0 auto;
+}
+
+/* --- Home Sections --- */
+.home-section {
+  padding: var(--home-section-py) 0;
+  scroll-margin-top: 5rem;
+}
+
+#aboutSection.home-section {
+  padding-bottom: calc(var(--home-section-py) + var(--home-transition-gap));
+}
+
+#clubSection.home-section {
+  padding-top: calc(var(--home-section-py) + var(--home-transition-gap));
+}
+
+.home-section__header {
+  text-align: center;
+  margin-bottom: var(--home-block-gap);
+}
+
+.home-section__header .section__title {
+  margin-bottom: var(--home-header-gap);
+}
+
+.home-section__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--home-grid-gap);
+}
+
+.home-section__cta {
+  text-align: center;
+  margin-top: var(--home-block-gap);
+}
+
+.home-section__cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.home-feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.home-feature-card--center {
+  text-align: center;
+}
+
+.home-feature-card__icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.home-feature-card__title {
+  margin-bottom: 0.5rem;
+}
+
+.home-feature-card__desc {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
 }
 
 /* Search & Filter */
@@ -1346,6 +1420,26 @@ body.is-authenticated .auth-only {
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
+  .home-section {
+    padding: var(--home-section-py-mobile) 0;
+  }
+
+  #aboutSection.home-section {
+    padding-bottom: calc(var(--home-section-py-mobile) + 0.75rem);
+  }
+
+  #clubSection.home-section {
+    padding-top: calc(var(--home-section-py-mobile) + 0.75rem);
+  }
+
+  .home-section__header {
+    margin-bottom: 1.5rem;
+  }
+
+  .home-section__cta {
+    margin-top: 1.5rem;
+  }
+
   .navbar__links {
     display: none;
     position: absolute;
