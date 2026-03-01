@@ -124,41 +124,88 @@
     </div>
   </section>
 
-  <!-- Public Section — always visible -->
-  <section class="resources" id="publicSection">
+  <!-- About Section — always visible -->
+  <section class="resources" id="aboutSection">
     <div class="container">
       <div class="section__header">
-        <h2 class="section__title">🏫 Khám phá FPT University</h2>
-        <p class="section__desc">Tìm hiểu về trường và các hoạt động câu lạc bộ</p>
+        <h2 class="section__title">🎯 Giới thiệu FPT Hub</h2>
+        <p class="section__desc">FPT Hub ra đời từ một nhu cầu thực tế: sinh viên năm nhất không biết phải bắt đầu từ
+          đâu khi tiếp xúc với hệ thống FAP, FLM, EduNext và hàng loạt nền tảng của trường.</p>
       </div>
-      <div class="card-grid">
-        <!-- Giới thiệu -->
-        <a href="pages/about.html" class="card" data-category="info">
-          <div class="card__icon" style="background:rgba(236,153,75,0.12)">ℹ️</div>
-          <h3 class="card__title">Giới thiệu FPT Hub</h3>
-          <p class="card__desc">Sứ mệnh, tính năng nổi bật và thông tin về dự án FPT Hub — nền tảng hỗ trợ sinh viên FPT
-            University.</p>
-          <div class="card__meta">
-            <div class="card__tags">
-              <span class="badge badge--brand">Giới thiệu</span>
-            </div>
-            <div class="card__arrow">→</div>
-          </div>
-        </a>
-        <!-- CLB -->
-        <a href="pages/clubs.html" class="card" data-category="info">
-          <div class="card__icon" style="background:rgba(168,85,247,0.12)">🎓</div>
-          <h3 class="card__title">Câu lạc bộ & Đời sống FPTU</h3>
-          <p class="card__desc">Khám phá 30+ CLB tại FPT — võ thuật, thể thao, lập trình, nghệ thuật và thông tin tuyển
-            sinh 2026.</p>
-          <div class="card__meta">
-            <div class="card__tags">
-              <span class="badge badge--info">30+ CLB</span>
-              <span class="badge badge--success">Mới</span>
-            </div>
-            <div class="card__arrow">→</div>
-          </div>
-        </a>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:2rem;">
+        <div
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">📸</div>
+          <h4 style="margin-bottom:0.5rem;">Ảnh chụp thực tế</h4>
+          <p style="color:var(--text-secondary);font-size:0.875rem;">Mỗi bước hướng dẫn đều kèm ảnh chụp màn hình thực
+            tế từ hệ thống trường.</p>
+        </div>
+        <div
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">💡</div>
+          <h4 style="margin-bottom:0.5rem;">Mẹo từ sinh viên</h4>
+          <p style="color:var(--text-secondary);font-size:0.875rem;">Kinh nghiệm thực chiến từ các anh chị khóa trước,
+            không chỉ lý thuyết suông.</p>
+        </div>
+        <div
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🔍</div>
+          <h4 style="margin-bottom:0.5rem;">Tìm kiếm nhanh</h4>
+          <p style="color:var(--text-secondary);font-size:0.875rem;">Tìm tài liệu theo từ khóa hoặc lọc theo danh mục:
+            học vụ, học tập, thi cử.</p>
+        </div>
+        <div
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🔒</div>
+          <h4 style="margin-bottom:0.5rem;">Dành riêng cho FPT</h4>
+          <p style="color:var(--text-secondary);font-size:0.875rem;">Xác thực qua email @fpt.edu.vn, đảm bảo chỉ sinh
+            viên FPT truy cập tài liệu.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="pages/about.html" class="btn btn--primary"
+          style="display:inline-flex;align-items:center;gap:0.5rem;">Xem thêm về FPT Hub →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLB Section — always visible -->
+  <section class="resources" id="clubSection">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">🎓 Câu lạc bộ & Đời sống FPTU</h2>
+        <p class="section__desc">Khám phá 30+ CLB đa dạng tại Đại học FPT — từ võ thuật, thể thao đến lập trình và nghệ
+          thuật. Tuyển sinh 2026 đang mở.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:2rem;">
+        <div
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">⚽</div>
+          <h4>Thể thao</h4>
+          <p style="color:var(--text-secondary);font-size:0.875rem;">Bóng đá, bóng rổ, cầu lông, bơi lội...</p>
+        </div>
+        <div
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">💻</div>
+          <h4>Lập trình</h4>
+          <p style="color:var(--text-secondary);font-size:0.875rem;">AI, Web Dev, Competitive Programming...</p>
+        </div>
+        <div
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🎨</div>
+          <h4>Nghệ thuật</h4>
+          <p style="color:var(--text-secondary);font-size:0.875rem;">Nhiếp ảnh, thiết kế, âm nhạc, kịch...</p>
+        </div>
+        <div
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.25rem;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🥋</div>
+          <h4>Võ thuật</h4>
+          <p style="color:var(--text-secondary);font-size:0.875rem;">Taekwondo, Karate, Boxing, Vovinam...</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="pages/clubs.html" class="btn btn--primary"
+          style="display:inline-flex;align-items:center;gap:0.5rem;">Khám phá tất cả CLB →</a>
       </div>
     </div>
   </section>

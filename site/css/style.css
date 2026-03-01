@@ -258,9 +258,13 @@ img {
   border-radius: var(--radius-sm);
 }
 
-/* --- Auth-only elements (hidden by default, shown by JS when logged in) --- */
+/* --- Auth-only elements (hidden by default, shown when body has .is-authenticated) --- */
 .auth-only {
-  display: none;
+  display: none !important;
+}
+
+body.is-authenticated .auth-only {
+  display: revert !important;
 }
 
 /* --- Navigation --- */

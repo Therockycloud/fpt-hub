@@ -136,7 +136,7 @@ function updateUI(user) {
             }
         }
         // Show auth-only elements
-        document.querySelectorAll('.auth-only').forEach(el => el.style.display = '');
+        document.body.classList.add('is-authenticated');
     } else {
         // Logged out
         if (authBtnWrap) authBtnWrap.style.display = 'block';
@@ -146,7 +146,7 @@ function updateUI(user) {
         }
         if (userWrap) userWrap.style.display = 'none';
         // Hide auth-only elements
-        document.querySelectorAll('.auth-only').forEach(el => el.style.display = 'none');
+        document.body.classList.remove('is-authenticated');
     }
 }
 
@@ -163,14 +163,9 @@ function showDemoMode() {
 
     localStorage.setItem('fpthub_demo_user', JSON.stringify(demoUser));
     currentUser = demoUser;
-    updateUI(currentUser);
 
-    // Show demo notification
-    const notification = document.createElement('div');
-    notification.style.cssText = 'position:fixed;bottom:1rem;right:1rem;z-index:9999;background:var(--bg-card);border:1px solid var(--brand-accent);border-radius:var(--radius-md);padding:1rem 1.5rem;color:var(--text-primary);font-size:0.875rem;max-width:360px;box-shadow:var(--shadow-lg);animation:slideUp 300ms ease;';
-    notification.innerHTML = '<strong style="color:var(--brand-accent);">🔧 Chế độ Demo</strong><br><span style="color:var(--text-secondary);">Firebase chưa được cấu hình. Đang chạy ở chế độ demo. Tất cả tài liệu đều có thể truy cập.</span>';
-    document.body.appendChild(notification);
-    setTimeout(() => notification.remove(), 5000);
+    // Reload page to show authenticated content
+    window.location.reload();
 }
 
 /**
