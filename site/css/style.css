@@ -1193,6 +1193,85 @@ img {
   animation: slideUp 500ms ease forwards;
 }
 
+/* --- Light Mode Overrides ---
+   Fix hardcoded rgba(255,255,255,...) values that only work on dark backgrounds */
+:root:not([data-theme="dark"]) .navbar__link:hover,
+:root:not([data-theme="dark"]) .navbar__link--active {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+:root:not([data-theme="dark"]) .btn--ghost {
+  color: var(--text-secondary);
+}
+
+:root:not([data-theme="dark"]) .btn--ghost:hover {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+:root:not([data-theme="dark"]) .card:hover .card__arrow {
+  background: var(--brand-accent);
+  color: white;
+}
+
+:root:not([data-theme="dark"]) .card__arrow {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-muted);
+}
+
+:root:not([data-theme="dark"]) .card {
+  box-shadow: var(--shadow-sm);
+}
+
+:root:not([data-theme="dark"]) .card:hover {
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(249, 115, 22, 0.06);
+}
+
+:root:not([data-theme="dark"]) .lightbox__close {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+:root:not([data-theme="dark"]) .lightbox__close:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+:root:not([data-theme="dark"]) .hero__bg::before {
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+}
+
+:root:not([data-theme="dark"]) .hero__bg::after {
+  background: radial-gradient(circle, rgba(148, 46, 0, 0.06) 0%, transparent 70%);
+}
+
+:root:not([data-theme="dark"]) .navbar__user {
+  background: var(--bg-input);
+}
+
+:root:not([data-theme="dark"]) .login__google-btn {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+:root:not([data-theme="dark"]) .login__google-btn:hover {
+  background: var(--bg-card-hover);
+}
+
+:root:not([data-theme="dark"]) .btn--primary {
+  color: white;
+}
+
+:root:not([data-theme="dark"]) .filter-tab--active {
+  color: white;
+}
+
+:root:not([data-theme="dark"]) .text-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
   .navbar__links {
