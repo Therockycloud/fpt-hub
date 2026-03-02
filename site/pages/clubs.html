@@ -41,93 +41,6 @@
             margin: 0 auto 2rem
         }
 
-        .fpt-info {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-xl);
-            padding: 2rem;
-            margin-bottom: 3rem
-        }
-
-        .fpt-info__title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: .5rem
-        }
-
-        .fpt-info__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1rem
-        }
-
-        .fpt-info__card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 1.25rem
-        }
-
-        .fpt-info__card h4 {
-            font-size: .9375rem;
-            font-weight: 700;
-            color: var(--brand-accent);
-            margin-bottom: .5rem
-        }
-
-        .fpt-info__card ul {
-            list-style: none;
-            padding: 0
-        }
-
-        .fpt-info__card li {
-            color: var(--text-secondary);
-            font-size: .875rem;
-            padding: .25rem 0;
-            padding-left: 1rem;
-            position: relative
-        }
-
-        .fpt-info__card li::before {
-            content: '›';
-            position: absolute;
-            left: 0;
-            color: var(--brand-accent)
-        }
-
-        .fpt-info__stats {
-            display: flex;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap
-        }
-
-        .fpt-info__stat {
-            text-align: center;
-            flex: 1;
-            min-width: 120px;
-            padding: 1rem;
-            background: rgba(249, 115, 22, 0.06);
-            border-radius: var(--radius-md);
-            border: 1px solid rgba(249, 115, 22, 0.12)
-        }
-
-        .fpt-info__stat-num {
-            display: block;
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--brand-accent)
-        }
-
-        .fpt-info__stat-label {
-            font-size: .8125rem;
-            color: var(--text-muted);
-            margin-top: .25rem
-        }
-
         .club-category {
             margin-bottom: 3rem
         }
@@ -298,14 +211,6 @@
             .club-grid {
                 grid-template-columns: 1fr
             }
-
-            .fpt-info__grid {
-                grid-template-columns: 1fr
-            }
-
-            .fpt-info__stats {
-                flex-direction: column
-            }
         }
     </style>
 </head>
@@ -319,6 +224,7 @@
             </a>
             <div class="navbar__links" id="navLinks">
                 <a href="../index.html" class="navbar__link">Trang chủ</a>
+                <a href="about-us.html" class="navbar__link">About Us</a>
                 <a href="about.html" class="navbar__link">Giới thiệu</a>
                 <a href="clubs.html" class="navbar__link navbar__link--active">CLB</a>
                 <a href="../index.html#resources" class="navbar__link auth-only">Tài liệu</a>
@@ -349,80 +255,10 @@
     <section class="guide">
         <div class="container">
             <div class="club-hero">
-                <span class="badge badge--brand" style="margin-bottom:1rem;display:inline-flex">🎓 Đời sống sinh viên
-                    FPT 2026</span>
-                <h1 class="club-hero__title">Câu lạc bộ & <span class="text-gradient">Đời sống FPTU</span></h1>
+                <span class="badge badge--brand" style="margin-bottom:1rem;display:inline-flex">🎓 CLB sinh viên FPT</span>
+                <h1 class="club-hero__title">Câu lạc bộ</h1>
                 <p class="club-hero__desc">Khám phá hơn 30 câu lạc bộ đa dạng tại Đại học FPT — từ võ thuật, thể thao
                     đến lập trình và nghệ thuật.</p>
-            </div>
-
-            <!-- FPT University 2026 Info -->
-            <div class="fpt-info">
-                <h2 class="fpt-info__title">🏫 Đại học FPT — Tuyển sinh 2026</h2>
-                <p style="color:var(--text-secondary);margin-bottom:1.5rem">Năm 2026, Đại học FPT tuyển sinh 38 chuyên
-                    ngành, mở rộng mạnh vào AI, dữ liệu, truyền thông sáng tạo và kinh doanh số.</p>
-                <div class="fpt-info__grid">
-                    <div class="fpt-info__card">
-                        <h4>💻 Công nghệ thông tin</h4>
-                        <ul>
-                            <li>Công nghệ thông tin</li>
-                            <li>Kỹ thuật phần mềm</li>
-                            <li>Trí tuệ nhân tạo</li>
-                            <li>Khoa học dữ liệu ứng dụng</li>
-                            <li>An toàn thông tin</li>
-                            <li>Vi mạch bán dẫn</li>
-                            <li>Công nghệ ô tô số</li>
-                            <li>Hệ thống thông tin</li>
-                            <li>Thiết kế đồ họa & mỹ thuật số</li>
-                        </ul>
-                    </div>
-                    <div class="fpt-info__card">
-                        <h4>📢 Truyền thông & Ngôn ngữ</h4>
-                        <ul>
-                            <li>Truyền thông đa phương tiện</li>
-                            <li>Quan hệ công chúng</li>
-                            <li>Truyền thông Marketing tích hợp</li>
-                            <li>Truyền thông thương hiệu</li>
-                            <li>Ngôn ngữ Anh</li>
-                            <li>Ngôn ngữ Hàn Quốc</li>
-                            <li>Ngôn ngữ Trung Quốc</li>
-                        </ul>
-                    </div>
-                    <div class="fpt-info__card">
-                        <h4>📊 Quản trị kinh doanh</h4>
-                        <ul>
-                            <li>Marketing</li>
-                            <li>Kinh doanh quốc tế</li>
-                            <li>Thương mại điện tử</li>
-                            <li>Quản trị kinh doanh</li>
-                            <li>Quản trị giải trí & sự kiện</li>
-                            <li>Phân tích kinh doanh</li>
-                            <li>Logistics & chuỗi cung ứng</li>
-                            <li>Công nghệ tài chính (FinTech)</li>
-                            <li>Quản trị khách sạn</li>
-                        </ul>
-                    </div>
-                    <div class="fpt-info__card">
-                        <h4>⚖️ Luật & Tài chính</h4>
-                        <ul>
-                            <li>Luật</li>
-                            <li>Luật kinh tế</li>
-                            <li>Tài chính doanh nghiệp</li>
-                            <li>Tài chính thông minh</li>
-                            <li>Tài chính ngân hàng</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="fpt-info__stats">
-                    <div class="fpt-info__stat"><span class="fpt-info__stat-num">38</span><span
-                            class="fpt-info__stat-label">Chuyên ngành</span></div>
-                    <div class="fpt-info__stat"><span class="fpt-info__stat-num">3</span><span
-                            class="fpt-info__stat-label">Phương thức tuyển sinh</span></div>
-                    <div class="fpt-info__stat"><span class="fpt-info__stat-num">5</span><span
-                            class="fpt-info__stat-label">Cơ sở toàn quốc</span></div>
-                    <div class="fpt-info__stat"><span class="fpt-info__stat-num">30+</span><span
-                            class="fpt-info__stat-label">Câu lạc bộ</span></div>
-                </div>
             </div>
 
             <!-- Search & Filter -->
@@ -729,9 +565,12 @@
                 </div>
                 <span class="footer__text">© 2026 FPT Hub — Dự án dành cho sinh viên FPT University</span>
                 <div class="footer__links">
+                    <a href="../index.html" class="footer__link">Trang chủ</a>
                     <a href="https://www.facebook.com/share/1C9CGed15R/" target="_blank" rel="noopener"
                         class="footer__link">Facebook</a>
+                    <a href="about-us.html" class="footer__link">About Us</a>
                     <a href="about.html" class="footer__link">Giới thiệu</a>
+                    <a href="clubs.html" class="footer__link">CLB</a>
                 </div>
             </div>
         </div>
